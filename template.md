@@ -29,4 +29,4 @@ Please describe the tests that you ran to verify your changes. Provide instructi
 - [ ] Any dependent changes have been merged and published in downstream modules
 
 ## Additional Information
-Please provide any additional information that you think would be helpful for reviewers[1][2][3][4][5].
+Please provide any additional information that you think would be helpful for reviewers[1].

@@ -34,6 +34,24 @@ Keep in mind that in order to optimize speed in the attempt of creating the proj
 #Build Details:
 ##Materials:
 
+Timer Audio Speaker
+- link:[continous noise](<https://www.amazon.com/WEICHUANG-Active-Electronic-Buzzer-Continous/dp/B08SL2HH65/ref=pd_rhf_ee_s_rtpb_dse_gccp_d_sccl_1_1/134-5006114-5799961?pd_rd_w=D0Pkn&amp;content-id=amzn1.sym.bd729ef1-498a-4698-af50-62a8451fe601&amp;pf_rd_p=bd729ef1-498a-4698-af50-62a8451fe601&amp;pf_rd_r=2C5HW1ZBKN6NPA01PC1J&amp;pd_rd_wg=yzE9w&amp;pd_rd_r=d8693a1f-f875-4a2c-b554-d4703c50f468&amp;pd_rd_i=B08SL2HH65&amp;th=1&_encoding=UTF8&tag=robjects-20&linkCode=ur2&linkId=5990d4b99e3aa094efbfdd2ef1ece628&camp=1789&creative=9325>) or [intermittent noise](https://www.amazon.com/dp/B07TT8WTVD?pf_rd_p=f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pf_rd_r=QMAFSB455EY4MSY7AQ89&pd_rd_wg=lADMj&pd_rd_w=ewlel&content-id=amzn1.sym.f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pd_rd_r=4b9a9a6e-b667-481d-a593-6eff4ede5592&s=hi&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw&th=1&linkCode=ll1&tag=robjects-20&linkId=c1d433b61ed1f27875ab7c4ad51de17c&language=en_US&ref_=as_li_ss_tl)
+- manual
+
+  Timer circuit
+- link:
+- manual![B1GVAXm4XqS](https://github.com/Robjects-Timers/Timer_v0/assets/20546156/ea89280b-eca0-4921-95b7-2f90bd583674)
+
+ usb power supply
+ -link
+ - manual
+
+   9v battery
+   - link
+  
+     
+
+  
 
 
 

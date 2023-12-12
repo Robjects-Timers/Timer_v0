@@ -1,5 +1,9 @@
 # Timer_v0
-This is the first of many iterations of the engineering design process with the intention of making a timer product from scratch.
+This is the first of many iterations of the engineering design process with the intention of making a timer product from scratch. 
+##Context: This idea resulted from the frustration and problem that occurred from not being able to focus on my tasks due to being distracted from my phone. And while perhaps some of you might just propose that I just not use the phone or put it away. 
+
+Although for some people the solution can apply with no problem, there are still some very real applications and/or tools needed for your work-related activities such as utilization of alarms, using calculator apps, two-factor authentication, and in case of emergency calls, you just aren't quite able to remove the need for a phone in the viciinity that requires your attention. that might truly be more productive or necessaryt to get work-related tasks
+
 
 ###Goal: Creating a timer product from scratch
 
@@ -28,6 +32,7 @@ Keep in mind that in order to optimize speed in the attempt of creating the proj
 
 
 #Build Details:
+##Materials:
 
 
 

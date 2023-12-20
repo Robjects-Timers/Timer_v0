@@ -24,22 +24,21 @@ Timer Audio Speaker
 - manual![B1GVAXm4XqS](https://github.com/Robjects-Timers/Timer_v0/assets/20546156/ea89280b-eca0-4921-95b7-2f90bd583674)
 
   power supply with switch
-  - [link](https://www.amazon.com/dp/B09WF27Q9N?coliid=I2K2YT9T4UHR2G&colid=1ERO15SLA5MAH&th=1&linkCode=ll1&tag=robjects-20&linkId=20dff3bb4d6340ae63bbe2612306943e&language=en_US&ref_=as_li_ss_tl)
+  - [Amazon link](https://www.amazon.com/dp/B09WF27Q9N?coliid=I2K2YT9T4UHR2G&colid=1ERO15SLA5MAH&th=1&linkCode=ll1&tag=robjects-20&linkId=20dff3bb4d6340ae63bbe2612306943e&language=en_US&ref_=as_li_ss_tl)
   - 
 
 
    And here is some supplementary hardware that might be of use
-  -batteries 9v: https://www.amazon.com/dp/B07RZ9PMQH?ie=UTF8&s=hpc&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM&pd_rd_i=B07RZ9PMQH&pd_rd_w=vp6iG&content-id=amzn1.sym.d81b167d-1f9e-48b6-87d8-8aa5e473ea8c&pf_rd_p=d81b167d-1f9e-48b6-87d8-8aa5e473ea8c&pf_rd_r=FYMGS02B0Z433V6EBPFQ&pd_rd_wg=VUT62&pd_rd_r=27799fe5-2c6a-492e-910a-02871a5f1d2c&th=1&linkCode=ll1&tag=robjects-20&linkId=89d975d5e423e5ddc7f23108ab8d79c5&language=en_US&ref_=as_li_ss_tl
+  - [batteries 9v:]( https://www.amazon.com/dp/B07RZ9PMQH?ie=UTF8&s=hpc&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM&pd_rd_i=B07RZ9PMQH&pd_rd_w=vp6iG&content-id=amzn1.sym.d81b167d-1f9e-48b6-87d8-8aa5e473ea8c&pf_rd_p=d81b167d-1f9e-48b6-87d8-8aa5e473ea8c&pf_rd_r=FYMGS02B0Z433V6EBPFQ&pd_rd_wg=VUT62&pd_rd_r=27799fe5-2c6a-492e-910a-02871a5f1d2c&th=1&linkCode=ll1&tag=robjects-20&linkId=89d975d5e423e5ddc7f23108ab8d79c5&language=en_US&ref_=as_li_ss_tl)
   
-  - [power module 5 pack] https://www.amazon.com/dp/B07SC1FSM9?coliid=IYU0HMCZAAKKF&colid=1YRP8QIT5XT4C&psc=1&linkCode=ll1&tag=robjects-20&linkId=491c00a8b245f979cfaa459522417f1f&language=en_US&ref_=as_li_ss_tl
+  - [power module 5 pack](https://www.amazon.com/dp/B07SC1FSM9?coliid=IYU0HMCZAAKKF&colid=1YRP8QIT5XT4C&psc=1&linkCode=ll1&tag=robjects-20&linkId=491c00a8b245f979cfaa459522417f1f&language=en_US&ref_=as_li_ss_tl)
  
-  - battery connectors
-    1. https://www.amazon.com/dp/B07YBYL7HH?coliid=I17EOFCT0C7RLH&colid=1YRP8QIT5XT4C&psc=1&linkCode=ll1&tag=robjects-20&linkId=e35b831ced6d6c32f630668e08efc097&language=en_US&ref_=as_li_ss_tl
-     2. https://www.amazon.com/dp/B08SL9X2YC?coliid=I1Y8GKUAYXOEDZ&colid=1YRP8QIT5XT4C&th=1&linkCode=ll1&tag=robjects-20&linkId=663cc92690b22550993a0a85a28c1837&language=en_US&ref_=as_li_ss_tl
+  - 1. [battery connectors](https://www.amazon.com/dp/B07YBYL7HH?coliid=I17EOFCT0C7RLH&colid=1YRP8QIT5XT4C&psc=1&linkCode=ll1&tag=robjects-20&linkId=e35b831ced6d6c32f630668e08efc097&language=en_US&ref_=as_li_ss_tl)
+     2. [other battery connectors](https://www.amazon.com/dp/B08SL9X2YC?coliid=I1Y8GKUAYXOEDZ&colid=1YRP8QIT5XT4C&th=1&linkCode=ll1&tag=robjects-20&linkId=663cc92690b22550993a0a85a28c1837&language=en_US&ref_=as_li_ss_tl)
 
-  3. https://www.amazon.com/dp/B06XX25HFX?coliid=I33RCI68G0QX9P&colid=1YRP8QIT5XT4C&psc=1&linkCode=ll1&tag=robjects-20&linkId=23fa6e515e3b7909197d4d5000cb9026&language=en_US&ref_=as_li_ss_tl
+  3. [other battery connectors](https://www.amazon.com/dp/B06XX25HFX?coliid=I33RCI68G0QX9P&colid=1YRP8QIT5XT4C&psc=1&linkCode=ll1&tag=robjects-20&linkId=23fa6e515e3b7909197d4d5000cb9026&language=en_US&ref_=as_li_ss_tl)
 
- -switches https://www.amazon.com/dp/B08F1D52YS?coliid=I3EZ62SRTM9V64&colid=1YRP8QIT5XT4C&psc=1&linkCode=ll1&tag=robjects-20&linkId=2276a1a3069cad982ad72d120e89af9f&language=en_US&ref_=as_li_ss_tl
+ -[switches](https://www.amazon.com/dp/B08F1D52YS?coliid=I3EZ62SRTM9V64&colid=1YRP8QIT5XT4C&psc=1&linkCode=ll1&tag=robjects-20&linkId=2276a1a3069cad982ad72d120e89af9f&language=en_US&ref_=as_li_ss_tl)
 
 
 

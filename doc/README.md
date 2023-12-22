@@ -20,7 +20,7 @@ If you have Breaboard wires and the ability to solder, then you only need one op
        1. [continous noise](https://amzn.to/3NEzoDs)
        2. [intermittent noise](Ghttps://amzn.to/3TthQhk)
   2. . Timer Circuit
-    1. [Seven Segment Display (Type-C)](https://amzn.to/47bdf6)
+    1. [Seven Segment Display (Type-C)](https://amzn.to/48rKJi9)
     2. [LED Display (Type-C or Micro-Usb)](https://amzn.to/3O03DFd)
   3. Trigger Switch
      1. [Micro Limit Switch (Momentary)](https://amzn.to/488LcWz)
@@ -44,10 +44,34 @@ For the sake of just configuring and testing the circuit, we'll go through the e
 #### Step 2: Configuring the Timer
 
 
- For this timer and other options similar to this one, there are many different configurations possible. 
+ For this timer and other options similar to this one, there are many different configurations possible. For Timer specific and testing applications, P1-P5, (or, P1-P2 for those using the Seven Segment Display) will work but feel free to look at different configurations as well.
+
+###### Testing the Circuit:
+We'll be using the P1-P4 (P1.1,P1.2,P1.3 for Seven Seg variation) for basic test runs and P4 for the final timer application. 
+
+- To configure different modes
+1. Turn Power on
+2. Hold Set until P* starts blinking
+3. Use Up and Down buttons to choose mode P1-P4
+4. Hold Set button until P* stops blinking
+   
+- Configuring Time Variables (OP, CL, etc...)
+  1. Turn on and ensure mode desired is seen on display (see step above if mode desired is incorrect)
+  2. Hold set until P* starts blinking
+  3. Press set once to configure first variable OP (or CL for those in P4 mode) 
+  4. Use Up and Down buttons to set time 
+     1. If no period is seen (Time is 0-999)
+  5.    
+P1-P3: Upon receiving a triggering signal, the relay turns on for an OP time and then turns off. Within the OP time, the following operations apply:
+  - P1:Subsequent triggering signals during the OP time have no effect.
+  - P2:Subsequent triggering signals during the OP time reset the timer.
+  - P3:Subsequent triggering signals during the OP time reset the timer, causing the relay to turn
+P4: When a triggering signal is received, the relay turns off after a CL time, then turns on for an OP time. Once the timer completes, the relay turns off.
 
 
-Since we just want to set a time prior to the execution of a speaker we will utilize Mode _________  which enables us to set a time(___) prior to powering on the load and a time,____, which will specify the  duration of which the load will go on. If you would like to learn more about the different possible modes please refer to documentation of which you can access via this link.
+  
+  
+  1. P1.1: Pressing switch while  _________  which enables us to set a time(___) prior to powering on the load and a time,____, which will specify the  duration of which the load will go on. If you would like to learn more about the different possible modes please refer to documentation of which you can access via this link.
 
 
 #### Step 3: Attach Trigger Switch

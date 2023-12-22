@@ -44,10 +44,18 @@ For the sake of just configuring and testing the circuit, we'll go through the e
 #### Step 2: Configuring the Timer
 
 
- For this timer and other options similar to this one, there are many different configurations possible. For Timer specific and testing applications, P1-P5, (or, P1-P2 for those using the Seven Segment Display) will work but feel free to look at different configurations as well.
+ For this timer and other options similar to this one, there are many different configurations possible. For Timer specific and testing applications, P1-P4, (or, P1-P2 for those using the Seven Segment Display) will work. Nevertheless, please feel free to look at different configurations as well.
 
-###### Testing the Circuit:
-We'll be using the P1-P4 (P1.1,P1.2,P1.3 for Seven Seg variation) for basic test runs and P4 for the final timer application. 
+#### Mode P1-P4 Explanation
+P1-3: Upon receiving a triggering signal, the all modes turn relay on for an OP time and then turns off. However, there are subtle variations depending on receiving another triggers after the OP time is counting down.
+  - P1:Subsequent triggering signals during the OP time have no effect.
+  - P2:Subsequent triggering signals during the OP time reset the timer.
+  - P3:Subsequent triggering signals during the OP time reset the timer, causing the relay to turn off and stop the timing process.
+
+P4: When a triggering signal is received, the relay turns off after a CL time, then turns on for an OP time. Once the timer completes, the relay turns off.
+
+###### 2. Configuring the timer Circuit:
+We'll be using the P1-P3 (P1.1,P1.2,P1.3 for Seven Seg variation) for basic test runs and P4 for the final timer application. Here are the directions for changing timer hardware functionality:
 
 - To configure different modes
 1. Turn Power on
@@ -62,24 +70,63 @@ We'll be using the P1-P4 (P1.1,P1.2,P1.3 for Seven Seg variation) for basic test
   4. Use Up and Down buttons to set time 
      1. If no period is seen (Time is 0-999)
   5.    
-P1-P3: Upon receiving a triggering signal, the relay turns on for an OP time and then turns off. Within the OP time, the following operations apply:
-  - P1:Subsequent triggering signals during the OP time have no effect.
-  - P2:Subsequent triggering signals during the OP time reset the timer.
-  - P3:Subsequent triggering signals during the OP time reset the timer, causing the relay to turn
-P4: When a triggering signal is received, the relay turns off after a CL time, then turns on for an OP time. Once the timer completes, the relay turns off.
+
+- Testing the Circuit:
+  - Testing Mode: P3 (P1.3 for Seven Segment Variation) 
+OP Time: 0003 (3 Seconds)
+For my test run, we'll be using P3 with OP time "0003" since we want to test for simple execution of one push on our trigger with options to stop the relay during OP countdown in case there are problems with the output connection to our speaker. This will enable fast prototyping and minimal delay or complexity while adding safety measures.
+- Running the Circuit (For everyday use):
+  - Mode Used: P4 (P2 for Seven Segment Variation)
+  - OP Time: 0900 (15 Minutes) 
+  - CL Time: 0005 (5 Seconds)
+When using the timer in real applications, I wanted to keep my breaks to 15 mins to not allow too long of a gap between work. Thus, the timer was configured for 0900 but feel free to modify based off your goals and needs.
+
+#### Step 3: Attach Trigger Switch 
+Next, we need to attach a trigger load in which when pressed, it will initiate the delay prior to the output being held for time (CL) on mode P4 and/or send power to the load that we will attach to the output connections.
+
+You can use different switch options apart from the momentary push button since the timer hardware only turns on the countdowns on the start of a high output trigger. This means, the circuit allows even a latching switch (AKA SPST) to turn the trigger on or off for different durations without accidental triggers. 
+
+##### Hardware Note [TODO: finish afff linkslater]:
+Ideally, you don't need any soldering to do this project; however, depending on cost, materials, and/or preference, you might need or just want to solder connections to make sure each button prong has a cable, each connection is tightly secure, and there are no loose wires. 
+
+Let's face it, soldering takes time, especially if you haven't learned the practice, or practiced solder lately. Before you commit or groan from the fact that you might, please take a look at these hardware options that literally remove the need to solder altogether. These prototyping essentials and wiring helpers I keep a part of my prototyping toolkit to remove the need to take annoying and arduous time in testing reducing hours, days, to even week delays in getting a working solution:
+
+Wiring two different wires (No Breadboard, No Soldering, No Splicing required):
+1. E-type inline connectors 
+2. 1-to-1 inline connectors
+
+Easy, Pain-free triggering and Speaker load Power supply options:
+3. Micro-USB Cable splitters (1 Input, 2 Outputs)
+4. Power Supply Module (For Trigger, and Speaker Load powering)
+5. 9V Battery switch()
+
+Connecting Prongs (No Breadboard, No Soldering, but Splicing Suggested)
+1. Spade Connectors 
+2. ...
 
 
-  
-  
-  1. P1.1: Pressing switch while  _________  which enables us to set a time(___) prior to powering on the load and a time,____, which will specify the  duration of which the load will go on. If you would like to learn more about the different possible modes please refer to documentation of which you can access via this link.
 
 
-#### Step 3: Attach Trigger Switch
-Next, we need to attach a trigger load in which when pressed, it will initiate the delay prior to the output being held for time (op)
+
+
+After pulling out the cable or turning power off, you can connect the switch to the timer pcb (momentary push button). I utilized the positive and negative pins (left, bottom two pin connections) enabled by our 5V USB connection and attached one wire into the positive header from the 2 pins on the bottom left terminal connections on the timer hardware and placed to one terminal connection prong of my button hardware. Then, I attached the second prong to the High-level trigger input connection (or the positive trigger on seven segment variation) due to the output being ~5V due to powering from a usb connection. Lastly, I connected the ground terminal from our power supply enabled from the 5V connection to the common ground (middle pin of three). Once connection have been made, pressing the switchs enabled triggering of the relay, as confirmed with clickikng sound and LED notification without the need for an external source of power.
+
+
+
+#####Note(TPDP) I the top input of the 5 of three connections)  After connection are secure and intact, I attached both ground  
+
+Additionally,splice the  usb cable and utilize a bread board (or painless E-Type connectors) to allow several pins to access the consistent voltage source coming from  To do this, you can can connect a wire to the positive (indicated with '+' on hardware) terminal via screwdriver and connected the other end of the wire to one end of the momentary push button. 
+
+- Note: If you are using a 3-pin type of connectors as seen in common relay switches, you can attach power to the NO (Normally Open) pin, and attach the common Ground circuit to the positive terminal of the triggering pin on the PCB
+- Note #2: For those using external power supply, please keep in mind that your connections will be a little different than the directions above but will still utilize the 
 
 
 #### Step 4: Attach external Speaker as Load
-Now that the trigger works to start the small delay configured for a quick test run, let us attach the speaker to the output pins 
+Now, we are ready to attach the speaker LED to the output of the relay. If you only used a usb connection (as shown in my design) to power the timer pcb, the timer pcb unfortunately does not have the ability to power the 2-pin speaker due to a reduced the amount of current flow from using only the 5V usb connection. 
+
+- Note: Because I did not want to include an extra power source as I didn't want to make the hardware bulky or add too much wiring which could be ripped or cut, I used a two way splitter which 'hacked' the need for a battery or external power for our load as explained in the hardware documentation. There are many many variations of this, so please don't feel limited in having to purchase this item as well. You can use a 9V battery by itself, or attached to power supply and just feed it to the speaker with the wiring described in the following step.
+
+#################finish this step ###########################
 
 #### Step 4: Test Timer
 Once everything has been configured, you should hear a satisfying beep of your circuit once the time delay has counted down to zero for a specified amount of time. I recommend to lower the time the load Will run to minimize noise and Power used during output.

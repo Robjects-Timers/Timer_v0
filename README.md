@@ -89,16 +89,25 @@ Here are some different types of buttons with all different types of sizes, pole
 Yeah... There are a lot of ways to describe switches. 
 > For those learning or need a reminder of of switch terminology, both [maintained]() and [momentary]() switches can be configured with many pole variations ( i.e., [SPST, SPDT, DPDT]()). I have provided tutorial links that do a great job of explaining all those concepts in a easy-to-read tutorial. And for those circuit geeks like myself, I recommend you to quiz yourself, look up any button you can find, and guess what each hardware example is before looking it up! :P
 
--------------------start here----------
-Using positive edges 
-  For those more experienced in digital logic, you might find the logic not unlike the logic you find in a positive edge-triggered flip-flop (With clk faster than a human can see). Nevertheless, for those without experience, here is a simple diagram to explain how a 
+
+[show timing diagram here]
+This circuit acknowledges the trigger and runs the pre-set configuration in two ways. 
+1. High-level Trigger (3.0V-24.0V):
+  the trigger is acknowledge at the rising edge meaning that both momentary and maintained (in off position) switches will turn on the circuit when you first press the button. With maintained switches, the circuit will not acknowledge the trigger until the next rising edge meaning you can keep it in the on position for as long as you like. 
+
+  [diagram of flip flop vs diagram of imagined timer hardware timing diagram or animation]
+  For educated Electrical Engineers like myself, your brain might be screaming (or cringing :P) "flip-flops! AHHHH!" or some other familiar Digital electronic synchronization circuit. 
+  
+  There are some differences of course to those pesky edge-triggered flippy flops. however, in real-time, "are they really even there...?" I mean, if flip-flop clocks fall so fast, are they really there?"
+
+   
 #### Modes P1-P4 Explanation:
-  - **P1-P3**: Upon receiving a triggering signal, the all modes turn relay on for an OP time and then turns off. However, there are subtle variations depending on receiving another triggers after the OP time is counting down.
+  - **P1-P3**: Upon receiving a triggering signal, modes P1-P3 all turn the relay on for a duration of pre-configured "OP" time until it turns off when the countdown hits zero. However, the sublety lies on what happens if a trigger is registered before the countdown "OP" hits zero.
     - **P1**:Subsequent triggering signals during the OP time have no effect.
     - **P2**:Subsequent triggering signals during the OP time reset the timer.
     - **P3**:Subsequent triggering signals during the OP time reset the timer, causing the relay to turn off and stop the timing process.
 
-  -  **P4**: When a triggering signal is received, the relay turns off after a CL time, then turns on for an OP time. Once the timer completes, the relay turns off.
+  -  **P4**: Mode P4 begins exactly as its predecessor with one extra pre-selected variable "CL" added. "CL" determines exactly how long the relay will be on, or "closed time" if you will. Which, if you plan to use in close-proximity with the dc audio speaker, you want to set to quick as the speaker can be an earful during timed breaks if you don't decide to muffle it.
 
 ###### 2. Configuring the timer Circuit:
 
@@ -130,7 +139,7 @@ For my test run, we'll be using P3 with OP time "0003" since we want to test for
   - OP Time: 0900 (15 Minutes) 
   - CL Time: 0005 (5 Seconds)
 When using the timer in real applications, I wanted to keep my breaks to 15 mins to not allow too long of a gap between work. Thus, the timer was configured for 0900 but feel free to modify based off your goals and needs.
-
+---------stopped here----- 
 #### Step 3: Attach Trigger Switch 
 Next, we need to attach a trigger load in which when pressed, it will initiate the delay prior to the output being held for time (CL) on mode P4 and/or send power to the load that we will attach to the output connections.
 

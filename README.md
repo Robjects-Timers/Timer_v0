@@ -61,9 +61,10 @@ There are actually 2 ways you can power the circuit:
    1.  Through the USB Socket Connection Port (**Easy**)
    2. Through pins via DC power source (**Could be Complex**)
 
-  Due to the hundreds of variations and possibilities of powering through option 2, we will stick to powering the circuit via the USB connector to reduce complexity of build. 
+  For the majority of this tutorial, we will stick to powering the circuit via the USB connector to reduce complexity and cost of this build.  
 > **Note:**
-> If there is large interest and request, I will definitely be happy to provide different possibilities and options of powering via pins.
+> For those planning to power the timer externally without a cable, I highly recommend you to read the documentation closely and plan out all wire connections as configuration changes if you plan to use an external battery. 
+> Take for instance a **9V DC Battery**: Although being in the input voltage range (**6-30V**) as seen in the [manual](), the power source likely not turn on or run out very quickly if you manage to power the circuit. This is due to its low-current and sporadic flunctuations in current as the relay is turned on and off while in use.
 
 #### 1. **Trigger**:
 With the circuit, the timer hardware needs a signal (from outside stimulus) to know that a countdown needs to begin, this is where the trigger comes into play. Due to the versatile logic in the timer circuit, one is able to configure both maintained and momentary switches with any number of poles (SPST, SPDT, DPDT). Here are some different types of buttons you can use:
@@ -85,7 +86,9 @@ Using positive edges
   -  **P4**: When a triggering signal is received, the relay turns off after a CL time, then turns on for an OP time. Once the timer completes, the relay turns off.
 
 ###### 2. Configuring the timer Circuit:
-We'll be using the P1-P3 (P1.1,P1.2,P1.3 for Seven Seg variation) for basic test runs and P4 for the final timer application. Here are the directions for changing timer hardware functionality:
+
+
+Here are the directions for changing timer hardware functionality:
 
 - To configure different modes
 > 1. Turn Power on
@@ -99,10 +102,12 @@ We'll be using the P1-P3 (P1.1,P1.2,P1.3 for Seven Seg variation) for basic test
 >   3. Press set once to configure first variable OP (or CL for those in P4 mode) 
 >   4. Use Up and Down buttons to set time 
 >      1. If no period is seen (Time is 0-999)
->   5.    
+>   5.  
+>   
+We'll be using the P1-P3 (P1.1,P1.2,P1.3 on USB-C variation) for basic test runs and P4 (P2 on USB-C) after hardware assembly and testing as shown below.
 
-- Testing the Circuit:
-  - Testing Mode: P3 (P1.3 for Seven Segment Variation) 
+- **Testing the Circuit:**
+  - Test Mode: P3 (P1.3 for Seven Segment Variation) 
 OP Time: 0003 (3 Seconds)
 For my test run, we'll be using P3 with OP time "0003" since we want to test for simple execution of one push on our trigger with options to stop the relay during OP countdown in case there are problems with the output connection to our speaker. This will enable fast prototyping and minimal delay or complexity while adding safety measures.
 - Running the Circuit (For everyday use):

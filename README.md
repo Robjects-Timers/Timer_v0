@@ -64,18 +64,22 @@ There are actually 2 ways you can power the circuit:
   For the majority of this tutorial, we will stick to powering the circuit via the USB connector to reduce complexity and cost of this build.  
 > **Note:**
 > For those planning to power the timer externally without a cable, I highly recommend you to read the documentation closely and plan out all wire connections as configuration changes if you plan to use an external battery. 
-> Take for instance a **9V DC Battery**: Although being in the input voltage range (**6-30V**) as seen in the [manual](), the power source likely not turn on or run out very quickly if you manage to power the circuit. This is due to its low-current and sporadic flunctuations in current as the relay is turned on and off while in use.
+> Take for instance a **9V DC Battery**: Although being in the input voltage range (**6-30V**) as seen in the [Timer Hardware Manual](/docs/TimerHardwareManual-MicroUSB.pdf), the power source will likely not turn on or worse, run out very quickly even if you manage to power the circuit. This is due to its low-current and sporadic flunctuations in current as the relay is turned on and off while in use. 
 
 #### 1. **Trigger**:
-With the circuit, the timer hardware needs a signal (from outside stimulus) to know that a countdown needs to begin, this is where the trigger comes into play. Due to the versatile logic in the timer circuit, one is able to configure both maintained and momentary switches with any number of poles (SPST, SPDT, DPDT). Here are some different types of buttons you can use:
+With the circuit, the timer hardware needs a signal (from outside stimulus) to know that a countdown needs to begin, this is where the trigger comes into play. Due to the versatile logic and good design, we are able to configure almost all types of buttons that can transfer a large range of voltages.
+Additionally, both [maintained]() and [momentary]() switches can be configured with many pole variations ( i.e., [SPST, SPDT, DPDT]()). 
+
+Yeah... There are a lot of ways to describe switches. For those looking for hardware examples, Here are some different types of buttons you can use:
 - Push Button
 - Rocker
 - Slide
 
 
-   If you want an explanation on how buttons work, please see this tutorial from Sparkfun
+> For those learning or need a reminder of of switch terminology, I recommend you to quiz yourself, and guess  what each hardware example is. Nevertheless, I have provided tutorial links that do a great job of explaining all those concepts in a easy-to-read tutorial.
 
-Using positive edges
+-------------------start here----------
+Using positive edges 
   For those more experienced in digital logic, you might find the logic not unlike the logic you find in a positive edge-triggered flip-flop (With clk faster than a human can see). Nevertheless, for those without experience, here is a simple diagram to explain how a 
 #### Modes P1-P4 Explanation:
   - **P1-P3**: Upon receiving a triggering signal, the all modes turn relay on for an OP time and then turns off. However, there are subtle variations depending on receiving another triggers after the OP time is counting down.

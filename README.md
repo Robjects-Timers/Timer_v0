@@ -61,22 +61,33 @@ There are actually 2 ways you can power the circuit:
    1.  Through the USB Socket Connection Port (**Easy**)
    2. Through pins via DC power source (**Could be Complex**)
 
-  For the majority of this tutorial, we will stick to powering the circuit via the USB connector to reduce complexity and cost of this build.  
+  For the majority of this tutorial, we will stick to powering the circuit via the USB C socket connector to reduce complexity, cost and unecessary steps to maximize speed.   
 > **Note:**
 > For those planning to power the timer externally without a cable, I highly recommend you to read the documentation closely and plan out all wire connections as configuration changes if you plan to use an external battery. 
 > Take for instance a **9V DC Battery**: Although being in the input voltage range (**6-30V**) as seen in the [Timer Hardware Manual](/docs/TimerHardwareManual-MicroUSB.pdf), the power source will likely not turn on or worse, run out very quickly even if you manage to power the circuit. This is due to its low-current and sporadic flunctuations in current as the relay is turned on and off while in use. 
 
 #### 1. **Trigger**:
-With the circuit, the timer hardware needs a signal (from outside stimulus) to know that a countdown needs to begin, this is where the trigger comes into play. Due to the versatile logic and good design, we are able to configure almost all types of buttons that can transfer a large range of voltages.
-Additionally, both [maintained]() and [momentary]() switches can be configured with many pole variations ( i.e., [SPST, SPDT, DPDT]()). 
+Before we create a delay at any given time, we need a way to signal to the timer and tell it:
+"hey, start your time." 
+In the magical world, a device would just automatically detect the exact moment you needed to start a timer and configure it to that exact delay that you would like. However, as good engineers, we know there is no way we would easily allow our minds to immediately accept that as reality.
 
-Yeah... There are a lot of ways to describe switches. For those looking for hardware examples, Here are some different types of buttons you can use:
+So we reason it out that we need to signal this device to countdown perhaps by turning it on or some other mechanism. Thus, the need for a trigger is born!
+
+And, due to the versatile logic and well design of this circuit printed on this circuit board, we are able to configure almost all types of buttons that can transfer a large range of voltages.
+
+This is great since this reduces the chance for mistake in our sprint to the finish as it removes any potetial in buying the wrong type of switch. In fact, the circuit is so well designed that technically, you don't even need another part to do a quick test as you have some wires and a lot of impatience! 
+
+
+Here are some different types of buttons with all different types of sizes, poles, form factors, pin configurations:
 - Push Button
+- 
 - Rocker
 - Slide
+- 
 
 
-> For those learning or need a reminder of of switch terminology, I recommend you to quiz yourself, and guess  what each hardware example is. Nevertheless, I have provided tutorial links that do a great job of explaining all those concepts in a easy-to-read tutorial.
+Yeah... There are a lot of ways to describe switches. 
+> For those learning or need a reminder of of switch terminology, both [maintained]() and [momentary]() switches can be configured with many pole variations ( i.e., [SPST, SPDT, DPDT]()). I have provided tutorial links that do a great job of explaining all those concepts in a easy-to-read tutorial. And for those circuit geeks like myself, I recommend you to quiz yourself, look up any button you can find, and guess what each hardware example is before looking it up! :P
 
 -------------------start here----------
 Using positive edges 

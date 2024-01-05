@@ -1,3 +1,6 @@
+[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
+
+
 # TIMER_V0
 This is the first of many iterations of the engineering design process with the intention of making a timer product from scratch. 
 ##### Context: 
@@ -162,7 +165,17 @@ Since you need a way to place all components in a secure location, we're going t
 #### Step 1: Configure Timer
 
 
-
+- [Button and Switch Basics](https://learn.sparkfun.com/tutorials/button-and-switch-basics/all) by Sparkfun Tutorials - JIMBLOM (Tutorial Contributer Username)
+- 
 
 ###### Licenses:
-[Button and Switch Basics](https://learn.sparkfun.com/tutorials/button-and-switch-basics/all) by Sparkfun Tutorials - JIMBLOM is licensed under [CC BY-SA 4.0 ](http://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1) 
+This work is licensed under a
+[Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
+
+[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
+
+[cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
+[cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
+[cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
+
+

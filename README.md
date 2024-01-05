@@ -37,7 +37,10 @@ After gathering of all components, let's go ahead and grab the timer pcb (Item #
 - **Powering the circuit**
   1. Easiest: Through USB cable 
   2. Easier: DC cable pins (battery-powered or not)
-1.  For the configuring and testing the circuit, we'll go through the easiest way to power the circuit, which is through the usb connectors on the pcb. Depending on what type of timer pcb variation you bought, you can grab either a USB-C or a Micro USB cable and connect it to the port. If you decide you don't want to use an external cable and take advatage of the has a WIDE input voltage (6V - 30V) that you can manually insert into the input pins, feel free to set that up.
+  
+    For configuring and testing the circuit, we'll utilize the through the usb connectors on the pcb (**Easiest**) as utilizing pins could be a little too complex for beginners.  
+1.  
+Depending on what type of timer pcb variation you bought, you can grab either a USB-C or a Micro USB cable and connect it to the port. If you decide you don't want to use an external cable and take advatage of the has a WIDE input voltage (6V - 30V) that you can manually insert into the input pins, feel free to set that up.
   ###### Note: If using an external source, I highly recommend you utilize a DC power source that you can adjust the input voltage before integrating any custom battery sources. This is due to the input requiring higher current capabilities with minimal flunctuations in as the circuit is used for different applications. For example, a simple 9V battery will most not likely be enough to power the circuit and speaker at time of execution.
 
 

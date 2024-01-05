@@ -42,32 +42,58 @@ After gathering of all components, let's go ahead and grab the timer pcb (Item #
 #### Step 2: Configuring the Timer
 
 
- For this timer and other options similar to this one, there are many different configurations possible. For Timer specific and testing applications, P1-P4, (or, P1-P2 for those using the Seven Segment Display) will work. Nevertheless, please feel free to look at different configurations as well.
+ For this timer and other options similar to this one, there are many different configurations possible.
+ 
+ According to the [documentation](): For our Timer applications, P1-P4 will suit any testing and configuration we will require for hardware build. Please see note for  timer pcb variations.
+ 
+ ```Note: For those using the Seven Segment Display Timer PCB variation, The configuration steps follow the exact ordering that the tutorial pcb variation does. For example, P2 will correspond to P1.2 (P3->P1.2, P4->P2) However, please feel free to fact check for understanding and browse at all possible configurations as well.auto```
 
-#### Mode P1-P4 Explanation
-P1-3: Upon receiving a triggering signal, the all modes turn relay on for an OP time and then turns off. However, there are subtle variations depending on receiving another triggers after the OP time is counting down.
-  - P1:Subsequent triggering signals during the OP time have no effect.
-  - P2:Subsequent triggering signals during the OP time reset the timer.
-  - P3:Subsequent triggering signals during the OP time reset the timer, causing the relay to turn off and stop the timing process.
+## Timer PCB Functionality:
+Due to the arrangement and numbering of pins across different variations, we will overview the timer PCB Hardware  into 3 main parts: **Power**, **Trigger**, **Relay** 
+#### 1. **Power**: 
+There are actually 2 ways you can power the circuit: 
+   1.  Through the USB Socket Connection Port (**Easy**)
+   2. Through pins via DC power source (**Could be Complex**)
 
-P4: When a triggering signal is received, the relay turns off after a CL time, then turns on for an OP time. Once the timer completes, the relay turns off.
+  Due to the hundreds of variations and possibilities of powering through option 2, we will stick to powering the circuit via the USB connector to reduce complexity of build. 
+> **Note:**
+> If there is large interest and request, I will definitely be happy to provide different possibilities and options of powering via pins.
+
+#### 1. **Trigger**:
+With the circuit, the timer hardware needs a signal (from outside stimulus) to know that a countdown needs to begin, this is where the trigger comes into play. Due to the versatile logic in the timer circuit, one is able to configure both maintained and momentary switches with any number of poles (SPST, SPDT, DPDT). Here are some different types of buttons you can use:
+- Push Button
+- Rocker
+- Slide
+
+
+   If you want an explanation on how buttons work, please see this tutorial from Sparkfun
+
+Using positive edges
+  For those more experienced in digital logic, you might find the logic not unlike the logic you find in a positive edge-triggered flip-flop (With clk faster than a human can see). Nevertheless, for those without experience, here is a simple diagram to explain how a 
+#### Modes P1-P4 Explanation:
+  - **P1-P3**: Upon receiving a triggering signal, the all modes turn relay on for an OP time and then turns off. However, there are subtle variations depending on receiving another triggers after the OP time is counting down.
+    - **P1**:Subsequent triggering signals during the OP time have no effect.
+    - **P2**:Subsequent triggering signals during the OP time reset the timer.
+    - **P3**:Subsequent triggering signals during the OP time reset the timer, causing the relay to turn off and stop the timing process.
+
+  -  **P4**: When a triggering signal is received, the relay turns off after a CL time, then turns on for an OP time. Once the timer completes, the relay turns off.
 
 ###### 2. Configuring the timer Circuit:
 We'll be using the P1-P3 (P1.1,P1.2,P1.3 for Seven Seg variation) for basic test runs and P4 for the final timer application. Here are the directions for changing timer hardware functionality:
 
 - To configure different modes
-1. Turn Power on
-2. Hold Set until P* starts blinking
-3. Use Up and Down buttons to choose mode P1-P4
-4. Hold Set button until P* stops blinking
+> 1. Turn Power on
+> 2. Hold Set until P* starts blinking
+> 3. Use Up and Down buttons to choose mode P1-P4
+> 4. Hold Set button until P* stops blinking
    
 - Configuring Time Variables (OP, CL, etc...)
-  1. Turn on and ensure mode desired is seen on display (see step above if mode desired is incorrect)
-  2. Hold set until P* starts blinking
-  3. Press set once to configure first variable OP (or CL for those in P4 mode) 
-  4. Use Up and Down buttons to set time 
-     1. If no period is seen (Time is 0-999)
-  5.    
+> 1. Turn on and ensure mode desired is seen on display (see step above if mode desired is incorrect)
+>   2. Hold set until P* starts blinking
+>   3. Press set once to configure first variable OP (or CL for those in P4 mode) 
+>   4. Use Up and Down buttons to set time 
+>      1. If no period is seen (Time is 0-999)
+>   5.    
 
 - Testing the Circuit:
   - Testing Mode: P3 (P1.3 for Seven Segment Variation) 
@@ -134,3 +160,9 @@ Since you need a way to place all components in a secure location, we're going t
 - 3D printed
 
 #### Step 1: Configure Timer
+
+
+
+
+###### Licenses:
+[Button and Switch Basics](https://learn.sparkfun.com/tutorials/button-and-switch-basics/all) by Sparkfun Tutorials - JIMBLOM is licensed under [CC BY-SA 4.0 ](http://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1) 

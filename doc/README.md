@@ -5,39 +5,37 @@ This idea resulted from the frustration and problem that occurred from not being
 
 
 
-### Build 
-#### Goal: 
-Design a timer from scratch
+## Timer Assembly Guide
+###### Goal: Design a timer from scratch
 
-#### Constraint: 
-Speed
+###### Constraint: Speed
 
-##### Hardware (links included):
-
-###### Required Items 
+### Hardware:
 If you have Breaboard wires and the ability to solder, then you only need one option from each numbered required from this section.
-  1. External DC Audio Speaker 
-       1. [continous noise](https://amzn.to/3NEzoDs)
-       2. [intermittent noise](Ghttps://amzn.to/3TthQhk)
-  2. . Timer Circuit
+###### Required Items (Choose one from each numbered item): 
+
+  
+1. **Timer Circuit**
     1. [Seven Segment Display (Type-C)](https://amzn.to/48rKJi9)
     2. [LED Display (Type-C or Micro-Usb)](https://amzn.to/3O03DFd)
-  3. Trigger Switch
+  2.  **External DC Audio Speaker** 
+       1. [continous noise](https://amzn.to/3NEzoDs)
+       2. [intermittent noise](Ghttps://amzn.to/3TthQhk)
+  3. **Trigger Switch**
      1. [Micro Limit Switch (Momentary)](https://amzn.to/488LcWz)
      2. [Push Button (Momentary or latching)](https://amzn.to/3RBcuOw)
-##### Optional & Supplementary
+###### Optional & Supplementary: 
+*******[TODO] *******
 
-
+# INSTRUCTIONS: 
 #### Step 1: Configure Timer
-After gathering of all components, let's go ahead and grab the timer pcb and configure the equipment for a test run. Follow these steps to configure a 10 second timer.
+After gathering of all components, let's go ahead and grab the timer pcb (Item #1) and configure the equipment for a test run. Follow these steps to configure a 10 second timer.
 
-  ##### Powering the circuit
+- **Powering the circuit**
   1. Easiest: Through USB cable 
   2. Easier: DC cable pins (battery-powered or not)
-
-For the sake of just configuring and testing the circuit, we'll go through the easiest way to power the circuit, which is through the usb connectors on the pcb. Depending on what type of circuit you bought, you can grab either a usb-c (or micro usb) cable and connect it to the port. If you decide you don't want to use an external cable and take advatage of the has a WIDE input voltage (6V - 30V) and external source. 
-
- - Note: If powering externally with battery:  Note: Keep in mind that the source has to have higher current capabilities with minimal flunctuations in as the circuit is used for different applications. For example, a simple 9V battery will most not likely be enough to power the circuit and speaker at time of execution.
+1.  For the configuring and testing the circuit, we'll go through the easiest way to power the circuit, which is through the usb connectors on the pcb. Depending on what type of timer pcb variation you bought, you can grab either a USB-C or a Micro USB cable and connect it to the port. If you decide you don't want to use an external cable and take advatage of the has a WIDE input voltage (6V - 30V) that you can manually insert into the input pins, feel free to set that up.
+  ###### Note: If using an external source, I highly recommend you utilize a DC power source that you can adjust the input voltage before integrating any custom battery sources. This is due to the input requiring higher current capabilities with minimal flunctuations in as the circuit is used for different applications. For example, a simple 9V battery will most not likely be enough to power the circuit and speaker at time of execution.
 
 
 

@@ -223,7 +223,7 @@ And although I am not particularly bad at soldering,I justified the microusb sac
 So with  illusion of a imaginary nearing finish line that did not exist. I attacked my electronic micro usb cables with the fire of 1000 suns. You see, I was determinator, and the junction node was my Sarah Conner. This is what came out of it.
 
   wasn't planning on  creating any 3-D prints I know all too well how much time it can add to a project you aren't, especially careful with constraints, so I grabbed the ugliest box in my vicinity and shoved all my separate components. Are there which ultimately Made my project look like it was made by a second grader.
-its soul. ~~I ran around my house to all the different cracks and crevices for just a breadboard pcb circuit. Knowing myself, I know I probably have already destroyed them all, but the thought of using a fat, ugly breadboard on such an elegant solution, fueled my annihilation warpath. but I was looking for the ones hiding from the devastation that I was planning on giving them. you see, I was a terminator and a junction node was my Sarah Connor.~~ 
+its soul. 
 
 
     In Hindsight, I can't tell you if it was worth it, or not.  I found such a simplistic, elegant and beautiful alternative in record time. Which, after sticking it in the ugliest box, it looked like a second grader could do a better job.
@@ -236,7 +236,7 @@ its soul. ~~I ran around my house to all the different cracks and crevices for j
 [llink to junction]
  thanks for sticking around!
 =========================stopped here========
-     [addddd intro here]
+     [addddd outro here]
 
 ##### Hardware Notes [TODO: finish afff linkslater]:
 Ideally, you don't need any soldering to do this project; however, depending on cost, materials, and/or preference, you might need or just want to solder connections to make sure each button prong has a cable, each connection is tightly secure, and there are no loose wires. 

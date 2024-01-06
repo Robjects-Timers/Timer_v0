@@ -2,6 +2,8 @@
 
 
 # TIMER_V0
+-------------------
+
 This is the first of many iterations of the engineering design process with the intention of making a timer product from scratch. 
 ##### Context: 
 This idea resulted from the frustration and problem that occurred from not being able to focus on my tasks due to being distracted from my phone. And while perhaps some of you might just propose that I just not use the phone or put it away. 
@@ -9,99 +11,65 @@ This idea resulted from the frustration and problem that occurred from not being
 
 
 ## Timer Assembly Guide
+-------------------
+### Objectives:
+-------------------
+
 ###### Goal: Design a timer from scratch
 
 ###### Constraint: Speed
 
-### Hardware:
+### Supplies:
+-------------------
+
 If you have Breaboard wires and the ability to solder, then you only need one option from each numbered required from this section.
 ###### Required Items (Choose one from each numbered item): 
 
-  
 1. **Timer Circuit**
     1. [Seven Segment Display (Type-C)](https://amzn.to/48rKJi9)
     2. [LED Display (Type-C or Micro-Usb)](https://amzn.to/3O03DFd)
-  2.  **External DC Audio Speaker** 
-       1. [continous noise](https://amzn.to/3NEzoDs)
-       2. [intermittent noise](Ghttps://amzn.to/3TthQhk)
-  3. **Trigger Switch**
-     1. [Micro Limit Switch (Momentary)](https://amzn.to/488LcWz)
-     2. [Push Button (Momentary or latching)](https://amzn.to/3RBcuOw)
+2.  **External DC Audio Speaker** 
+    1. [continous noise](https://amzn.to/3NEzoDs)
+    2. [intermittent noise](Ghttps://amzn.to/3TthQhk)
+3. **Trigger Switch**
+    1. [Micro Limit Switch (Momentary)](https://amzn.to/488LcWz)
+    2. [Push Button (Momentary or latching)](https://amzn.to/3RBcuOw)
+
 ###### Optional & Supplementary: 
-*******[TODO] *******
 
-# INSTRUCTIONS: 
-#### Step 1: Configure Timer
-After gathering of all components, let's go ahead and grab the timer pcb (Item #1) and configure the equipment for a test run. Follow these steps to configure a 10 second timer.
-
-- **Powering the circuit**
-  1. Easiest: Through USB cable 
-  2. Easier: DC cable pins (battery-powered or not)
-  
-    For configuring and testing the circuit, we'll utilize the through the usb connectors on the pcb (**Easiest**) as utilizing pins could be a little too complex for beginners.  
-1.  
-Depending on what type of timer pcb variation you bought, you can grab either a USB-C or a Micro USB cable and connect it to the port. If you decide you don't want to use an external cable and take advatage of the has a WIDE input voltage (6V - 30V) that you can manually insert into the input pins, feel free to set that up.
-  ###### Note: If using an external source, I highly recommend you utilize a DC power source that you can adjust the input voltage before integrating any custom battery sources. This is due to the input requiring higher current capabilities with minimal flunctuations in as the circuit is used for different applications. For example, a simple 9V battery will most not likely be enough to power the circuit and speaker at time of execution.
+### Timer Build Assembly Guide
+-------------------
 
 
+Let's go ahead and overview the timer PCB Hardware by breaking it down into 5 main parts: **Power**, **Trigger**, **Relay** 
+#### 1. Powering the circuit: 
+-------------------
 
-#### Step 2: Configuring the Timer
-
-
- For this timer and other options similar to this one, there are many different configurations possible.
- 
- According to the [documentation](): For our Timer applications, P1-P4 will suit any testing and configuration we will require for hardware build. Please see note for  timer pcb variations.
- 
- ```Note: For those using the Seven Segment Display Timer PCB variation, The configuration steps follow the exact ordering that the tutorial pcb variation does. For example, P2 will correspond to P1.2 (P3->P1.2, P4->P2) However, please feel free to fact check for understanding and browse at all possible configurations as well.auto```
-
-## Timer PCB Functionality:
-Due to the arrangement and numbering of pins across different variations, we will overview the timer PCB Hardware  into 3 main parts: **Power**, **Trigger**, **Relay** 
-#### 1. **Power**: 
-There are actually 2 ways you can power the circuit: 
+According to the manual for our micro-usb timer hardware,there are 2 main ways that you can power the circuit: 
    1.  Through the USB Socket Connection Port (**Easy**)
    2. Through pins via DC power source (**Could be Complex**)
+   
+For the majority of this tutorial, we will stick to powering the circuit via the USB C socket connector to reduce complexity, cost and unecessary steps to fit with the speed constraint in the YouTube Video. 
 
-  For the majority of this tutorial, we will stick to powering the circuit via the USB C socket connector to reduce complexity, cost and unecessary steps to maximize speed.   
+
+
+Depending on what type of timer pcb variation you bought, you can grab either a USB-C or a Micro USB cable and connect it to the socket. 
+
 > **Note:**
-> For those planning to power the timer externally without a cable, I highly recommend you to read the documentation closely and plan out all wire connections as configuration changes if you plan to use an external battery. 
+> For those planning to power the timer externally via external source, I **highly recommend** you to **read the documentation** closely and plan out all wire connections as configuration changes if you plan to use an external battery. Before getting any hardware for my first iteration, I still made costly mistakes that could have been avoided with careful reading.
 > Take for instance a **9V DC Battery**: Although being in the input voltage range (**6-30V**) as seen in the [Timer Hardware Manual](/docs/TimerHardwareManual-MicroUSB.pdf), the power source will likely not turn on or worse, run out very quickly even if you manage to power the circuit. This is due to its low-current and sporadic flunctuations in current as the relay is turned on and off while in use. 
 
-#### 1. **Trigger**:
-Before we create a delay at any given time, we need a way to signal to the timer and tell it:
-"hey, start your time." 
-In the magical world, a device would just automatically detect the exact moment you needed to start a timer and configure it to that exact delay that you would like. However, as good engineers, we know there is no way we would easily allow our minds to immediately accept that as reality.
+#### 2. Setting Timer Mode Instructions:
+-------------------
 
-So we reason it out that we need to signal this device to countdown perhaps by turning it on or some other mechanism. Thus, the need for a trigger is born!
+Now that we have power to our pcb, let's go ahead and configure the timer pcb ([Item #1](https://amzn.to/48rKJi9)) for a test run.
 
-And, due to the versatile logic and well design of this circuit printed on this circuit board, we are able to configure almost all types of buttons that can transfer a large range of voltages.
+Here are the directions needed for changing timer hardware functionality:
 
-This is great since this reduces the chance for mistake in our sprint to the finish as it removes any potetial in buying the wrong type of switch. In fact, the circuit is so well designed that technically, you don't even need another part to do a quick test as you have some wires and a lot of impatience! 
-
-
-Here are some different types of buttons with all different types of sizes, poles, form factors, pin configurations:
-- Push Button
-- 
-- Rocker
-- Slide
-- 
-
-
-Yeah... There are a lot of ways to describe switches. 
-> For those learning or need a reminder of of switch terminology, both [maintained]() and [momentary]() switches can be configured with many pole variations ( i.e., [SPST, SPDT, DPDT]()). I have provided tutorial links that do a great job of explaining all those concepts in a easy-to-read tutorial. And for those circuit geeks like myself, I recommend you to quiz yourself, look up any button you can find, and guess what each hardware example is before looking it up! :P
-
-
-[show timing diagram here]
-This circuit acknowledges the trigger and runs the pre-set configuration in two ways. 
-1. High-level Trigger (3.0V-24.0V):
-  the trigger is acknowledge at the rising edge meaning that both momentary and maintained (in off position) switches will turn on the circuit when you first press the button. With maintained switches, the circuit will not acknowledge the trigger until the next rising edge meaning you can keep it in the on position for as long as you like. 
-
-  [diagram of flip flop vs diagram of imagined timer hardware timing diagram or animation]
-  For educated Electrical Engineers like myself, your brain might be screaming (or cringing :P) "flip-flops! AHHHH!" or some other familiar Digital electronic synchronization circuit. 
-  
-  There are some differences of course to those pesky edge-triggered flippy flops. however, in real-time, "are they really even there...?" I mean, if flip-flop clocks fall so fast, are they really there?"
-
-   
-#### Modes P1-P4 Explanation:
+_For those using alternative timer hardware, please see note below for corresponding modes:_
+> **Note**: For those using the Seven Segment Display Timer PCB variation, The configuration steps follow the exact ordering that the tutorial pcb variation does. For example, P2 will correspond to P1.2 (P3->P1.2, P4->P2) However, please feel free to fact check for understanding and browse at all possible configurations as well
+> 
+- **Modes P1-P4 Explanation**:
   - **P1-P3**: Upon receiving a triggering signal, modes P1-P3 all turn the relay on for a duration of pre-configured "OP" time until it turns off when the countdown hits zero. However, the sublety lies on what happens if a trigger is registered before the countdown "OP" hits zero.
     - **P1**:Subsequent triggering signals during the OP time have no effect.
     - **P2**:Subsequent triggering signals during the OP time reset the timer.
@@ -109,43 +77,168 @@ This circuit acknowledges the trigger and runs the pre-set configuration in two 
 
   -  **P4**: Mode P4 begins exactly as its predecessor with one extra pre-selected variable "CL" added. "CL" determines exactly how long the relay will be on, or "closed time" if you will. Which, if you plan to use in close-proximity with the dc audio speaker, you want to set to quick as the speaker can be an earful during timed breaks if you don't decide to muffle it.
 
-###### 2. Configuring the timer Circuit:
-
-
-Here are the directions for changing timer hardware functionality:
-
-- To configure different modes
+- **To configure different modes (P1-P7)**
 > 1. Turn Power on
 > 2. Hold Set until P* starts blinking
 > 3. Use Up and Down buttons to choose mode P1-P4
 > 4. Hold Set button until P* stops blinking
    
-- Configuring Time Variables (OP, CL, etc...)
+ > 
+
+- **Configuring Time Variables (OP, CL, etc...)**
 > 1. Turn on and ensure mode desired is seen on display (see step above if mode desired is incorrect)
 >   2. Hold set until P* starts blinking
 >   3. Press set once to configure first variable OP (or CL for those in P4 mode) 
 >   4. Use Up and Down buttons to set time 
 >      1. If no period is seen (Time is 0-999)
 >   5.  
->   
-We'll be using the P1-P3 (P1.1,P1.2,P1.3 on USB-C variation) for basic test runs and P4 (P2 on USB-C) after hardware assembly and testing as shown below.
 
-- **Testing the Circuit:**
-  - Test Mode: P3 (P1.3 for Seven Segment Variation) 
+- **Modes Utilized for timer build**:
+We'll be using the P1-P3 (P1.1,P1.2,P1.3 on USB-C variation) for basic test runs and P4 (P2 on USB-C) after we finish all testing and are ready to finalize the prototype.
+  - **Testing the Circuit:**
+    - Test Mode: P3 (P1.3 for Seven Segment Variation) 
 OP Time: 0003 (3 Seconds)
 For my test run, we'll be using P3 with OP time "0003" since we want to test for simple execution of one push on our trigger with options to stop the relay during OP countdown in case there are problems with the output connection to our speaker. This will enable fast prototyping and minimal delay or complexity while adding safety measures.
-- Running the Circuit (For everyday use):
+- **Running the Circuit (For everyday use)**:
   - Mode Used: P4 (P2 for Seven Segment Variation)
   - OP Time: 0900 (15 Minutes) 
   - CL Time: 0005 (5 Seconds)
 When using the timer in real applications, I wanted to keep my breaks to 15 mins to not allow too long of a gap between work. Thus, the timer was configured for 0900 but feel free to modify based off your goals and needs.
----------stopped here----- 
-#### Step 3: Attach Trigger Switch 
-Next, we need to attach a trigger load in which when pressed, it will initiate the delay prior to the output being held for time (CL) on mode P4 and/or send power to the load that we will attach to the output connections.
+
+
+#### 3. Trigger Signal:
+-------------------
+ Next, we need to attach a trigger load in which when pressed, it will initiate the delay prior to the output being held for time (CL) on mode P4 and/or send power to the load that we will attach to the output connections. But before we start connecting pins and wires, let's overview how the trigger works with the micro-usb timer hardware.
+
+With this variation of timer, there are two inputs that the circuit will recognize.
+
+
+_`[show trigger diagram here]`_
+
+1. High-level Trigger (3.0V-24.0V):
+  the trigger is acknowledge at the rising edge meaning that both momentary and maintained (in off position) switches will turn on the circuit when you first press the button changing the trigger to the on position. With maintained switches, the circuit will not acknowledge the trigger until the next rising edge meaning you can keep it in the on position for as long as you like. 
+  _`[show trigger diagram here]`_
+
+1. Low-level Trigger (0V-0.2V): Similar to High-level trigger but voltage is high in the off position. For our specific timer usage, I do not recommend this method to those expecting to use the circuit in the medium to long run, especially when testing a prototype. This is due to the continuous presence of voltage at one of the terminals of the button. Over time, there will be voltage drops which could eventually fall in the low-level trigger range if circuit is running long-term.. Additionally, the posibility of accidental triggering is also much higher due to the possibility accidental stripping, tears, or breaks in the connections from moving the prototype which would be entirely avoided if a high-level trigger is utilized. 
+
+
+Ultimately, the high-level trigger is ideal, as we can easily tie an external dc battery source with a toggle switch seperate from main power. This will incredibly increase the life-span of the battery, decrease material cost, and provide efficient modularity in case we want to upgrade, replace, or change the trigger source without reassembling the entire circuit. This is timer VERSION #0, and there is still much more to come so having organized and seperate parts Makes it incredibly easier to make on the spot changes which will increase my productivity and speed, even more in the long run.
+
+
+_`[show timing diagram here with flip flop included]`_
+
+  [diagram of flip flop vs diagram of imagined timer hardware timing diagram or animation]
+  For educated Electrical Engineers like myself, your brain might be screaming (or cringing :P) "flip-flops! AHHHH!" or some other familiar Digital electronic synchronization circuit. 
+  
+  There are some differences of course to those pesky edge-triggered flippy flops. however, in real-time, "are they really even there...?" I mean, if flip-flop clocks fall so fast, are they really there?"
+
+ 
+
 
 You can use different switch options apart from the momentary push button since the timer hardware only turns on the countdowns on the start of a high output trigger. This means, the circuit allows even a latching switch (AKA SPST) to turn the trigger on or off for different durations without accidental triggers. 
 
-##### Hardware Note [TODO: finish afff linkslater]:
+#### 4. Relay Overview:
+In the timer hardware, our rela follows a standard configuration that is seen across all types of relays, with or without delay, potentials.
+
+##### Relay functionality:
+
+
+  You typically have three pins to set up with this standard: NC, COM/C, NO.
+
+  When a momentary switch is not actuated, it’s in a “normal” state. Depending on how the button is constructed, its normal state can be either an open circuit or a short circuit.
+
+  1. Normally Open (NO): This means that the circuit itself is broken in a normal state and is only a closed loop when the switch/button is pressed. it is not actuated meaning there is no current
+  2. Normally Closed (NC): and the other hand, if the button is closed, unless it is actuated, it is considered a normally closed switch, where a press of the button will break the circuit, creating an open circuit
+  3. Common Ground (C/COM): When attaching a button, common ground is the first terminal of the relay where you want to connect the first part of your circuit to. When the relay is off the normally closed (NC) and the Common Ground (C/COM) have continuity. conversely, when the relays turned on the normally open(NO) and the common ground (C/COM) have continuity. based off these principles, buttons are wired to one of the terminals NC or NO depending on use case. 
+
+##### Relay Hardware Assembly:
+
+for the reasons mentioned in the trigger, we will utilize the normally open and common ground  terminals on the PCB. This is due to the fact that we want an output to be created at the end of the countdown. this means that anytime  before the powering of the relay, the loop will be open. 
+
+Note: Ideally, we should be able to use the PCB power supplied from microusb cable from the input bottom left 2 pins (shown as 5V on multimeter)
+
+[show image]
+
+ to configure relay pins NO and COM and the 2 wires from the audio speaker. I mean a microcontroller can power this speaker with a 3.3V output pin... it would make sense or so I thought...
+
+
+
+But to my dissapointment, after frantically Losing my mind on why a 5V powered (with 3A!) couldn't make a Silly little audio speaker wail as load as sirens from a single 3.3V microcontroller pin, I took Another look at the manual provided in the box.
+
+ After reading the world, smallest and finest of print, turns out that when powering the timer pcb with a micro USB cable, the 2 input pins on the bottom left corner provide a laughable 15 mA current.
+
+ I was destroyed... I was humiliated... And I was bamboozled.
+
+ Till that point, everything was flowing, smoothly, efficiently, ridiculously well in the path to rapid prototyping.up until that point, I was ready to tell Elon he had nothing on me.
+
+ Disappointment turned to sadness to anger and frustration for a good three hours. and knowing myself, if I didn't make a move or try to do something, anything... All these years, all these unfinished projects were flashing through my thoughts at once. I was going to admit defeat. 
+
+
+But maybe I'm tired of piles of unfinished projects that I give up on in the Time where my effort would most pay off if I stayed just a little bit longer. So... With those boiling inside of me.  I managed to Convert some of deep, deep sadness to engineering RAGE.
+ 
+
+   An for those that, don't know about the rage, the engineering rage that comes from deep nerdy impulsivity. 
+   
+   Be aware. It's the real deal, yo.
+
+    So through my engineering impulsivity, I decided to forget everything that I knew was true about electronics.
+
+    I grabbed a pair of water strippers ad went nuts on every micro USB cable that dared be in my vicinity.
+ ========================stopped making sense here =======
+
+
+~~As I cut the fifth micro USB cable, and took a look at all these different types of wires and connectors on the ground,~~ After perpetual cycles of emotional damage, I finally decided to make a move and risk it all. 
+
+I was going to make a **node** By the end of the night. No matter what it takes or how it looks.
+
+
+
+
+ My first idea was to make a note someway somehow with wires, I knew several different options, but Nothing I imagined Would be  Elegant enough to associate with my beautiful first project. 
+ 
+ 
+Nevertheless, since I was too tired to think, and I refuse to not hear my speaker whale at me, I decided to start cutting wires.
+My intention was to hack and remove the need to hae an external power source for  a tiny speaker that can be powered by a microcontroller. the manual stated that I needed a 220 VAC power source to utilize and get my relay to work. Heck no.
+
+Other options could include:
+1. Taping both wires after twisting them.
+2.  Using a spade connector and using hot air to solder them together
+3.    using a soldering iron to make a blob of a connection between two micro USB cables.
+4.    Finding a bread prototype that has connecting notes and  solder them together.
+
+
+ I knew I could do better...
+
+  And then I remembered. while ago, I bought a one input, two outputs, split micro USB cable that allowed you to utilize and transfer data with two different devices while being concurrently connected.my mind screamed a mixure of no and f you since I knew I would have to sacrifice one output and strip it in order to attach it to the screw terminals of the PCP..
+
+
+Fortune favors the brave, right...?  
+  
+  
+And although I am not particularly bad at soldering,I justified the microusb sacrifice by reasoning that I had a higher chance of burning my house down through soldering 
+  Then, being shocked from the weenie little current, that that timer PCP neglected to mention. I made sure not to provide that one as an affiliate link in case you wanted to do something similar 
+
+
+
+So with  illusion of a imaginary nearing finish line that did not exist. I attacked my electronic micro usb cables with the fire of 1000 suns. You see, I was determinator, and the junction node was my Sarah Conner. This is what came out of it.
+
+  wasn't planning on  creating any 3-D prints I know all too well how much time it can add to a project you aren't, especially careful with constraints, so I grabbed the ugliest box in my vicinity and shoved all my separate components. Are there which ultimately Made my project look like it was made by a second grader.
+its soul. ~~I ran around my house to all the different cracks and crevices for just a breadboard pcb circuit. Knowing myself, I know I probably have already destroyed them all, but the thought of using a fat, ugly breadboard on such an elegant solution, fueled my annihilation warpath. but I was looking for the ones hiding from the devastation that I was planning on giving them. you see, I was a terminator and a junction node was my Sarah Connor.~~ 
+
+
+    In Hindsight, I can't tell you if it was worth it, or not.  I found such a simplistic, elegant and beautiful alternative in record time. Which, after sticking it in the ugliest box, it looked like a second grader could do a better job.
+
+     but it's all love here, nspiring others to be creative and build new and crazy technologies at whatever income, cultural background is what it is all about. 
+
+
+
+ oh, and if you want to never struggle the way I did,here is a solution that would've saved me a day  in engineering ra
+[llink to junction]
+ thanks for sticking around!
+=========================stopped here========
+     [addddd intro here]
+
+##### Hardware Notes [TODO: finish afff linkslater]:
 Ideally, you don't need any soldering to do this project; however, depending on cost, materials, and/or preference, you might need or just want to solder connections to make sure each button prong has a cable, each connection is tightly secure, and there are no loose wires. 
 
 Let's face it, soldering takes time, especially if you haven't learned the practice, or practiced solder lately. Before you commit or groan from the fact that you might, please take a look at these hardware options that literally remove the need to solder altogether. These prototyping essentials and wiring helpers I keep a part of my prototyping toolkit to remove the need to take annoying and arduous time in testing reducing hours, days, to even week delays in getting a working solution:
@@ -196,15 +289,15 @@ Since you need a way to place all components in a secure location, we're going t
 
 #### Step 1: Configure Timer
 
-Attributions:
+### Attributions:
 -------------------
 
   **Resource #1:**
   - [Button and Switch Basics](https://learn.sparkfun.com/tutorials/button-and-switch-basics/all) © 2013 by Sparkfun Electronics,  (Contributor "JIMBLOM") is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 
-     - Additionally, this guide uses images extracted from tutorial above with  contributor "JIMBLOM" ([Sparkfun-profile](https://www.sparkfun.com/users/69916?_ga=2.172188515.1921033785.1704438252-691382123.1704438252)) embedded in this guide.
+     - Additionally, this guide uses images and text extracted from tutorial above with  contributor "JIMBLOM" ([Sparkfun-profile](https://www.sparkfun.com/users/69916?_ga=2.172188515.1921033785.1704438252-691382123.1704438252)) embedded in this guide.
  
 
-License Information
+### License Information
 -------------------
 
 This product is _**open source**_! 

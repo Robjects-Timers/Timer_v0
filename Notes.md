@@ -1,0 +1,1 @@
+_Admittedlly, the actual build has already been done months ago, and while I was successful in blitzing and finishing my first build with incredible finness and speed, I am very much receiving the consequences of time in the aftermath due to the difficulty of trying to recollect what the heck I was thinking and going through during those days...._ [addd to notes]

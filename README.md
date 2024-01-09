@@ -4,7 +4,7 @@
 # TIMER_V0
 -------------------
 
-This is the first of many iterations of the engineering design process with the intention of making a timer product from scratch. 
+This is the pre-liminary iteration of the engineering design process which breakdowns a self-created timer product step-by-step with details on hardware used,instructions for replication, with notes walking through the thought process. All information is available for the public completely cost-free with links available for purchase on hardware used in guide. 
 ##### Context: 
 This idea resulted from the frustration and problem that occurred from not being able to focus on my tasks due to being distracted from my phone. And while perhaps some of you might just propose that I just not use the phone or put it away. 
 

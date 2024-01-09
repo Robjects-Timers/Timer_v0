@@ -166,6 +166,8 @@ Note: Ideally, we should be able to use the PCB power supplied from microusb cab
 
 But to our dissapointment, the manual shows (in the smallest of prints if I may add) that when powering the timer pcb **with a micro USB cable**, the 2 input pins on the bottom left corner output a 5V voltage with 15 mA which unfortunately doesn't reach a high enough current. For instance, the speaker, although can work with currents as low as 15mA, requires a voltage of at least 12V for it to work with that current output according to the specifications.
 
+
+
 So unfortunately, we were going to have to come up with a differenet alternative. So, going back to brainstorming, we need a solution that effectively adds more power to the speaker to enable it to power on as countdown stops. Or, we need to completely reframe the notification system entirely and redefine what is needed to know when a timer is done based on intended use case/purpose of a prototype. Here are some options that could work, and should be quick to do if planned correctly:
 
 1. adding additional battery to allow the relay to create notification when turned on
@@ -173,32 +175,47 @@ So unfortunately, we were going to have to come up with a differenet alternative
 3. find a speaker that works with combination of 5V/15mA 
 4. change notification system from to LED which still has small noise made when relay is turned on.
 
- Note:
- Although speed is the essence, we still need to be going through some sort of logical process before resorting to quick, hasty actions that sneakily seem like the easiest path for solving the problem at hand. Part of becoming a efficient and productive engineer is learning when to hesitate, take a break from building, and jump back to the design and planning process. Realigning yourself with the updated problem at hand ensures you don't follow 'rabbit holes' of a sequential process. 
- Admittedly, I have not followed this approach, especially in my earlier years of prototyping and with projects done entirely independently. I would hastily convince myself that if I tried to take a break, my solution created at a later time wouldn't  be nearly as good or worse, I would never finish my project. Only through the stubbornness and the brutal mistakes that only arise from frequent overnight failure, I learned it is better to follow take breaks and listen to the voice. The voice that wisely tells me to realign yourself, consolidate you and tell you that it is okay to make mistakes. Taking a step back to ensure you acknowledge them might seem uneccessary and take to long, but it allows you and your body to learn from them and predict the pattern again in the future builds. I know all too well the process of forgetting and stubbornly repeating diving into rabbit holes as I loved to justify the additional information that would have been lost had I taken a break.
+
+ > **Note**:
+>  Although speed is the essence, we still need to be going through some sort of logical process before resorting to quick, hasty actions that sneakily seem like the easiest path for solving the problem at hand. Part of becoming a efficient and productive engineer is learning when to hesitate, take a break from building, realign yourself with any new problems or information presented, and jump back to arranging the best steps forward.
+>  The engineering design process is not always sequential or perfect, even if you 'perfectly' planned every step along the way. Sometimes, the most productive action you can make is restraint, although it might not seem in the moment.
+>   Realigning yourself with the updated problem at hand ensures you don't follow 'rabbit holes' of a sequential process and turn 5 minute solutions into 5 hour mistakes which will yield better result in the long run.
+> For further information which might help you in learning from my time-wasting mistakes, feel free to see "Mistakes I wish I understood before developing" section in ["Acknowledgements.md"](Acknowledgements.md).
+
+
+
+
+before deciding on, seems like the easiest choice, let's go ahead and use some sort of logical reasoning  to decide which approach to tackle. reigning ourselves with our speed constraint, we need something to be the quickest so this easily removes option #3 as we would too long (in product search and shipping) for our new package which on top of the additional money of finding another speaker.  before resorting to this option, let's make sure we cannot solve it with an easier and much more cheaper solution. So, considering option four, we would have to essentially align ourselves with the purpose of the project, or in this case prototype. 
+  
+   The overall purpose is to create a timer in which we can input a delay and allow the timer to countdown which ultimately turns on a relay at the end of the countdown. That being said, we have the first steps of that process covered, which are Starting the timer and triggering the countdown of a specific pre-selected time. so now, all that is missing is turning on the relay, which is currently not working.  so let's go ahead and reframe the problem and isolate the what/where/when/why/details of fixing this in our prototype.
+   1. what:  First, let's discuss the basic necessities. We need some sort of notification to signify that. The countdown of the timer hardware is finished.
+   2. how: currently, the notification system is set to use sound (via powered speaker). realistically for my prototype and use case needs, having other notification systems is possible. 
+   3. when: I intend to use the prototype when I require breaks. Typically these brakes would be used in the middle of the day, or at the after the last Session of work typically requires full attention. 
+   4. why: The brakes are solely needed to detach myself from screens and have a chance to relax/meditate as I transition to another session of work or other daily activity. I typically want to stay away from having to use my phone as it's not a great activity to do as my brain would just consider this another stimulating activity.
+   5. where: I imagine most of the brakes that I take will be in my room or area apart from my office so it most likely will require minimal movement of location.
+   
+Taking all of these into consideration, I narrow it down to two different options: #4 and #2.
+So considering that I will use this notification system mainly during breaks, not meant for screen time, perhaps it would be best to Remove a somewhat loud alarm that might jolt me, and subtract from the benefit from the low stress environment. Additionally, the relay itself when it starts does have a small noise in which can be heard if the device is  in proximity. This, in combination with an LED type, notification would be incredibly valuable as I imagine I could wake up from a qquick nap and realize if the break is over or not without  inducing, negative stress.
+
+ Next we have option number two, which ultimately still uses the speaker, but doesn't involve utilizing an extra battery which would cost materials, size, and Project clutter (as suggestted in #1). Instead,  we can create a creative solution that splits the USB power source prior to the attachment  into the hardware, which would ultimately split the power source in parallel with one pathway still being the the input of the timer (with microusb male headers) requiring minimum of 50 mA and the other pathway powering the speaker PCB (in Normally Open configuration) only when the relay is turned on. This means after accounting how much current is needed (estimateed from speaker's 12V/15mA specification), the estimated (650mA current required when relay turns on would allow concurrent power to both the timer and speaker.
+  been load to the speaker attached to.
+
+ let's first attempt option #4  as this keeps intended speaker in the solution without having to configure additional components which require manual hardwiring which reduces intended modularization of hardwareAs we need to manually hardwire some components and ensure notification system will suffice. 
+
+ using some hardware hacks that I've learned over having to configure so many different circuits,  I will utilize one of my favorite methods that do not require soldering, gluing spray, connectors, or any extra tools apart from the potential splicing tool to make a node/junction connecting many terminals from different components in a circuit.
+
+
  
- I learned that despite this, I tended to forget those things much more easily due to the other negative effects that come with the neurotic tendencies of the 'stop till I drop approach' such as losing sleep, not eating, and/or not exercising just to finish. 
- Ultimately, it is your design and you can take whatever actions in the path to accomplishing your projects, but I know reducing extremely long pursuits of the same project resulted in the most impact, as it allows me to be more consistent, which in the long run will always provide you better results.
+ Using ['Type-E Lever Wire Connectors"](https://amzn.to/3NW4eHX) with a Y splitter that splits one input into 2 options such as a [microusb (Micro micro to dual male micro headers) type](https://amzn.to/3NUKOmL) or a [or a USB (1 Male input, 2 USB Female](https://amzn.to/41XZaIH) to allow split on cheap wire instead of splicing the product, you can allow one end for the hardware and another for the speaker as shown below
+
+ [image of speaker with usb] 
+
+ By no means are these components are not required which is why I placed these supplementary components apart from hardware required in beginning of instructions. Additionally, or those that refuse to buy the extra components, and/or don't create circuits often, you could just as easily manually splice your own wires in formation ([use link as reference only](https://amzn.to/3tC23Ct)). With many alternatives in connecting nodes (i.e., breadboard, spade connectors, and/or soldering iron), please do not feel forced to buy products you will only use once.
  
-  Finding the voice that mixes the motivation with logical reasoning has been one of the most impactful changes I made, 
-
- ~~The engineering design process is not always sequential or perfect, Even if you 'perfectly' planned every step along the way. Sometimes, the most productive action you can make is restraint, although it might not seem in the moment. Learning how to mix the mentality of 'not stopping until everything is done' which avails in success at times, to the mentaility of 'let's make sure we understand the problem at hand' will yield better result in the long run. I can remember, almost painfully, at an easy solution that would have been much quicker and potentially time saving fix that was revealed to me once I stepped back and realigned myself with the new constraints or details of a problem.~~
- 
- 'what is relevant to provide the best solution' 
- 
-  and consider options in the continuous design and building phase
- 
-  and when to dive into a solution. time and time again, especially when I am in a rush to finish things, I find myself to make more mistakes that could have been avoided. Had I just taken even two minutes to think out the entire process.
- 
-  before making any quick decisions, let's go ahead and think about a potential alternative before unnecessarily wasting chunks of time and frustration. Let's Retouch Retouch on what? what I want to use the prototype for and how I wanted to be notifiedng back to what I want to use the prototype for and how I wanted to be notified
+  However, using these shortcut will definitely save you in time on effort used, **especially** if you constanting like working with electronics. This is because often times, despite detailed time and effort in simulation, real-time prototypes fail to work due to unforseen problems that couldn't have been calculated
 
 
-
-
- although our speaker requires very little current, wasn't _couldn't_ make a Silly little audio speaker wail as load as sirens from a single 3.3V microcontroller pin, I took Another look at the manual provided in the box.
-
- After reading the world, smallest and finest of print, 
-
+==========addd to script=========================
  I was destroyed... I was humiliated... And I was bamboozled.
 
  Till that point, everything was flowing, smoothly, efficiently, ridiculously well in the path to rapid prototyping.up until that point, I was ready to tell Elon he had nothing on me.
@@ -216,7 +233,9 @@ But maybe I'm tired of piles of unfinished projects that I give up on in the Tim
     So through my engineering impulsivity, I decided to forget everything that I knew was true about electronics.
 
     I grabbed a pair of water strippers ad went nuts on every micro USB cable that dared be in my vicinity.
- ========================stopped making sense here =======
+  
+
+
 
 
 ~~As I cut the fifth micro USB cable, and took a look at all these different types of wires and connectors on the ground,~~ After perpetual cycles of emotional damage, I finally decided to make a move and risk it all. 

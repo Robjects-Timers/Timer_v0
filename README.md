@@ -30,7 +30,7 @@ If you have Breaboard wires and the ability to solder, then you only need one op
     2. [LED Display (Type-C or Micro-Usb)](https://amzn.to/3O03DFd)
 2.  **External DC Audio Speaker** 
     1. [continous noise](https://amzn.to/3NEzoDs)
-    2. [intermittent noise](Ghttps://amzn.to/3TthQhk)
+    2. [intermittent noise](https://amzn.to/3TthQhk)
 3. **Trigger Switch**
     1. [Micro Limit Switch (Momentary)](https://amzn.to/488LcWz)
     2. [Push Button (Momentary or latching)](https://amzn.to/3RBcuOw)
@@ -112,40 +112,41 @@ When using the timer in real applications, I wanted to keep my breaks to 15 mins
 
 With this variation of timer, there are two inputs that the circuit will recognize.
 
+1. **High-level Trigger (3.0V-24.0V)**:
 
 _`[show trigger diagram here]`_
 
-1. High-level Trigger (3.0V-24.0V):
-  the trigger is acknowledge at the rising edge meaning that both momentary and maintained (in off position) switches will turn on the circuit when you first press the button changing the trigger to the on position. With maintained switches, the circuit will not acknowledge the trigger until the next rising edge meaning you can keep it in the on position for as long as you like. 
+  the trigger is acknowledge at the rising edge meaning that both momentary and maintained (in off position) switches will turn on the circuit when you first press the button changing the trigger to the on position. With maintained switches, the circuit will not acknowledge the trigger until the next rising edge meaning you can keep it in the on or off position for as long as you like and the relay will only trigger on the up signal of a voltage spike in the 3.0-24 voltage range. 
   _`[show trigger diagram here]`_
 
-1. Low-level Trigger (0V-0.2V): Similar to High-level trigger but voltage is high in the off position. For our specific timer usage, I do not recommend this method to those expecting to use the circuit in the medium to long run, especially when testing a prototype. This is due to the continuous presence of voltage at one of the terminals of the button. Over time, there will be voltage drops which could eventually fall in the low-level trigger range if circuit is running long-term.. Additionally, the posibility of accidental triggering is also much higher due to the possibility accidental stripping, tears, or breaks in the connections from moving the prototype which would be entirely avoided if a high-level trigger is utilized. 
+1. **Low-level Trigger (0V-0.2V)**: Similar to High-level trigger but voltage is high in the off position (or very low voltage). This means, that you can tie a battery to the terminals and have the relay start when you disconnect the pins or turn the source off via switch. 
+   
+    For our specific timer usage, I do not recommend this method to those expecting to use the circuit in the medium to long run, especially when testing a prototype. This is due to the continuous presence of voltage at one of the terminals of the button. Over time, there will be voltage drops which could eventually fall in the low-level trigger range if circuit is running long-term.. Additionally, the posibility of accidental triggering is also much higher due to the possibility accidental stripping, tears, or breaks in the connections from moving the prototype which would be entirely avoided if a high-level trigger is utilized. 
 
 
 Ultimately, the high-level trigger is ideal, as we can easily tie an external dc battery source with a toggle switch seperate from main power. This will incredibly increase the life-span of the battery, decrease material cost, and provide efficient modularity in case we want to upgrade, replace, or change the trigger source without reassembling the entire circuit. This is timer VERSION #0, and there is still much more to come so having organized and seperate parts Makes it incredibly easier to make on the spot changes which will increase my productivity and speed, even more in the long run.
 
 
-_`[show timing diagram here with flip flop included]`_
-
-  [diagram of flip flop vs diagram of imagined timer hardware timing diagram or animation]
-  For educated Electrical Engineers like myself, your brain might be screaming (or cringing :P) "flip-flops! AHHHH!" or some other familiar Digital electronic synchronization circuit. 
-  
-  There are some differences of course to those pesky edge-triggered flippy flops. however, in real-time, "are they really even there...?" I mean, if flip-flop clocks fall so fast, are they really there?"
+> - **Extra Note**:
+> _`[show timing diagram here with flip flop included]`_
+> 
+>   [diagram of flip flop vs diagram of imagined timer hardware timing diagram or animation]
+>   For educated Electrical Engineers like myself, your brain might be screaming (or cringing :P) "flip-flops! AHHHH!" or some other familiar Digital electronic synchronization circuit. 
+>   
+>   There are some differences of course to those pesky edge-triggered flippy flops. however, in real-time, "are they really even there...?" I mean, if flip-flop clocks fall so fast, are they really there?"
 
  
 
 
-You can use different switch options apart from the momentary push button since the timer hardware only turns on the countdowns on the start of a high output trigger. This means, the circuit allows even a latching switch (AKA SPST) to turn the trigger on or off for different durations without accidental triggers. 
+
 
 #### 4. Relay Overview:
-In the timer hardware, our rela follows a standard configuration that is seen across all types of relays, with or without delay, potentials.
+In the timer hardware, our relay follows a standard configuration that is seen across all types of relays, with or without delay, potentials.
 
 ##### Relay functionality:
 
 
-  You typically have three pins to set up with this standard: NC, COM/C, NO.
-
-  When a momentary switch is not actuated, it’s in a “normal” state. Depending on how the button is constructed, its normal state can be either an open circuit or a short circuit.
+  When a momentary switch/relay is not actuated, it’s in a “normal” state. Depending on how the button is constructed, its normal state can be either an open circuit or a short circuit. Futhermore, This configuration is typical standard that you might see association with switches, relays, and programmable logic controllers (PLCs). So it makes sense that the relay that our timer hardware follows this approach, characterized with by standard 3 pins naming convention NO, COM/C, and NC explained below:
 
   1. Normally Open (NO): This means that the circuit itself is broken in a normal state and is only a closed loop when the switch/button is pressed. it is not actuated meaning there is no current
   2. Normally Closed (NC): and the other hand, if the button is closed, unless it is actuated, it is considered a normally closed switch, where a press of the button will break the circuit, creating an open circuit
@@ -155,17 +156,48 @@ In the timer hardware, our rela follows a standard configuration that is seen ac
 
 for the reasons mentioned in the trigger, we will utilize the normally open and common ground  terminals on the PCB. This is due to the fact that we want an output to be created at the end of the countdown. this means that anytime  before the powering of the relay, the loop will be open. 
 
-Note: Ideally, we should be able to use the PCB power supplied from microusb cable from the input bottom left 2 pins (shown as 5V on multimeter)
+Note: Ideally, we should be able to use the PCB power supplied from microusb cable from the input bottom left 2 pins (shown as 5V on multimeter) to configure relay pins NO and COM and the 2 wires from the audio speaker as seen in image gelow:
+ 
+ [show image]
+ 
+  I mean a microcontroller can power this speaker with a 3.3V output pin... it would make sense or so I thought...
 
-[show image]
-
- to configure relay pins NO and COM and the 2 wires from the audio speaker. I mean a microcontroller can power this speaker with a 3.3V output pin... it would make sense or so I thought...
 
 
+But to our dissapointment, the manual shows (in the smallest of prints if I may add) that when powering the timer pcb **with a micro USB cable**, the 2 input pins on the bottom left corner output a 5V voltage with 15 mA which unfortunately doesn't reach a high enough current. For instance, the speaker, although can work with currents as low as 15mA, requires a voltage of at least 12V for it to work with that current output according to the specifications.
 
-But to my dissapointment, after frantically Losing my mind on why a 5V powered (with 3A!) couldn't make a Silly little audio speaker wail as load as sirens from a single 3.3V microcontroller pin, I took Another look at the manual provided in the box.
+So unfortunately, we were going to have to come up with a differenet alternative. So, going back to brainstorming, we need a solution that effectively adds more power to the speaker to enable it to power on as countdown stops. Or, we need to completely reframe the notification system entirely and redefine what is needed to know when a timer is done based on intended use case/purpose of a prototype. Here are some options that could work, and should be quick to do if planned correctly:
 
- After reading the world, smallest and finest of print, turns out that when powering the timer pcb with a micro USB cable, the 2 input pins on the bottom left corner provide a laughable 15 mA current.
+1. adding additional battery to allow the relay to create notification when turned on
+2. split 5V input (from cable wire) in parallel to allow one source for both hardware and speaker
+3. find a speaker that works with combination of 5V/15mA 
+4. change notification system from to LED which still has small noise made when relay is turned on.
+
+ Note:
+ Although speed is the essence, we still need to be going through some sort of logical process before resorting to quick, hasty actions that sneakily seem like the easiest path for solving the problem at hand. Part of becoming a efficient and productive engineer is learning when to hesitate, take a break from building, and jump back to the design and planning process. Realigning yourself with the updated problem at hand ensures you don't follow 'rabbit holes' of a sequential process. 
+ Admittedly, I have not followed this approach, especially in my earlier years of prototyping and with projects done entirely independently. I would hastily convince myself that if I tried to take a break, my solution created at a later time wouldn't  be nearly as good or worse, I would never finish my project. Only through the stubbornness and the brutal mistakes that only arise from frequent overnight failure, I learned it is better to follow take breaks and listen to the voice. The voice that wisely tells me to realign yourself, consolidate you and tell you that it is okay to make mistakes. Taking a step back to ensure you acknowledge them might seem uneccessary and take to long, but it allows you and your body to learn from them and predict the pattern again in the future builds. I know all too well the process of forgetting and stubbornly repeating diving into rabbit holes as I loved to justify the additional information that would have been lost had I taken a break.
+ 
+ I learned that despite this, I tended to forget those things much more easily due to the other negative effects that come with the neurotic tendencies of the 'stop till I drop approach' such as losing sleep, not eating, and/or not exercising just to finish. 
+ Ultimately, it is your design and you can take whatever actions in the path to accomplishing your projects, but I know reducing extremely long pursuits of the same project resulted in the most impact, as it allows me to be more consistent, which in the long run will always provide you better results.
+ 
+  Finding the voice that mixes the motivation with logical reasoning has been one of the most impactful changes I made, 
+
+ ~~The engineering design process is not always sequential or perfect, Even if you 'perfectly' planned every step along the way. Sometimes, the most productive action you can make is restraint, although it might not seem in the moment. Learning how to mix the mentality of 'not stopping until everything is done' which avails in success at times, to the mentaility of 'let's make sure we understand the problem at hand' will yield better result in the long run. I can remember, almost painfully, at an easy solution that would have been much quicker and potentially time saving fix that was revealed to me once I stepped back and realigned myself with the new constraints or details of a problem.~~
+ 
+ 'what is relevant to provide the best solution' 
+ 
+  and consider options in the continuous design and building phase
+ 
+  and when to dive into a solution. time and time again, especially when I am in a rush to finish things, I find myself to make more mistakes that could have been avoided. Had I just taken even two minutes to think out the entire process.
+ 
+  before making any quick decisions, let's go ahead and think about a potential alternative before unnecessarily wasting chunks of time and frustration. Let's Retouch Retouch on what? what I want to use the prototype for and how I wanted to be notifiedng back to what I want to use the prototype for and how I wanted to be notified
+
+
+
+
+ although our speaker requires very little current, wasn't _couldn't_ make a Silly little audio speaker wail as load as sirens from a single 3.3V microcontroller pin, I took Another look at the manual provided in the box.
+
+ After reading the world, smallest and finest of print, 
 
  I was destroyed... I was humiliated... And I was bamboozled.
 

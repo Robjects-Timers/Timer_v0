@@ -4,9 +4,33 @@
 # TIMER_V0
 -------------------
 
-This is the pre-liminary iteration of the engineering design process which breakdowns a self-created timer product step-by-step with details on hardware used,instructions for replication, with notes walking through the thought process. All information is available for the public completely cost-free with links available for purchase on hardware used in guide. 
-##### Context: 
+This is the pre-liminary iteration of the engineering design process which breakdowns a self-created timer product step-by-step with extra details on hardware and tools used that helped tremendously in fast prototyping. I've provided up-to-date links in the guide but feel free to let me know in the YouTube Video comments in case some options are no longer working and/or out of stock. All information is available for the public completely cost-free with links available for purchase on hardware used in guide. 
+
+### Context: 
 This idea resulted from the frustration and problem that occurred from not being able to focus on my tasks due to being distracted from my phone. And while perhaps some of you might just propose that I just not use the phone or put it away. 
+
+### Table of Contents:
+-------------------
+- [TIMER\_V0](#timer_v0)
+    - [Context:](#context)
+    - [Table of Contents:](#table-of-contents)
+  - [Timer Assembly Guide](#timer-assembly-guide)
+    - [Objectives:](#objectives)
+    - [Supplies:](#supplies)
+          - [Required Items (Choose one from each numbered item):](#required-items-choose-one-from-each-numbered-item)
+          - [Optional \& Supplementary:](#optional--supplementary)
+    - [Timer Build Assembly Guide](#timer-build-assembly-guide)
+      - [Step 1. Powering the circuit:](#step-1-powering-the-circuit)
+      - [Step 2. Setting Timer Mode Instructions:](#step-2-setting-timer-mode-instructions)
+      - [Step 3. Trigger Signal:](#step-3-trigger-signal)
+      - [Step 4. Relay Overview:](#step-4-relay-overview)
+      - [Step 5: Attach external Speaker as Load](#step-5-attach-external-speaker-as-load)
+      - [Step 6: Test Timer](#step-6-test-timer)
+      - [Step 7: Attach Supporting Hardware (Optional)](#step-7-attach-supporting-hardware-optional)
+    - [Attributions:](#attributions)
+    - [License Information](#license-information)
+        - [License](#license)
+
 
 
 
@@ -15,9 +39,21 @@ This idea resulted from the frustration and problem that occurred from not being
 ### Objectives:
 -------------------
 
-###### Goal: Design a timer from scratch
+- **Goal:** Design a timer from scratch in minimal time
+- **Constraint**: Speed
+- **Pros & Cons of Build**
+| Pros                                                                                                | Cons                                            |
+| --------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
+| No Volume adjustment available                                                                      | No coding in build (+ increased speed)          |
+| Power through USB requires additional power source (or hardware hack alternative featured in guide) | No 3D Printed Enclosure (+ increased speed)     |
+| Manual Configuration required for changing countdown can be tedious                                 | No Soldering used (+ increased speed)           |
+| Limited options provided from timer hardware selected                                               | No Breadboard used (+ increased speed)          |
+| ---                                                                                                 | Minimal focus on aesthetics (+ increased speed) |
+| ---                                                                                                 | Timer hardware allows powering via micro-usb    |
+| ---                                                                                                 | Display for seeing countdown progress.          |
+| ---                                                                                                 | Low cost for full build (under $20 dollars)     |
 
-###### Constraint: Speed
+
 
 ### Supplies:
 -------------------
@@ -42,7 +78,7 @@ If you have Breaboard wires and the ability to solder, then you only need one op
 
 
 Let's go ahead and overview the timer PCB Hardware by breaking it down into 5 main parts: **Power**, **Trigger**, **Relay** 
-#### 1. Powering the circuit: 
+#### Step 1. Powering the circuit: 
 -------------------
 
 According to the manual for our micro-usb timer hardware,there are 2 main ways that you can power the circuit: 
@@ -59,7 +95,7 @@ Depending on what type of timer pcb variation you bought, you can grab either a 
 > For those planning to power the timer externally via external source, I **highly recommend** you to **read the documentation** closely and plan out all wire connections as configuration changes if you plan to use an external battery. Before getting any hardware for my first iteration, I still made costly mistakes that could have been avoided with careful reading.
 > Take for instance a **9V DC Battery**: Although being in the input voltage range (**6-30V**) as seen in the [Timer Hardware Manual](/docs/TimerHardwareManual-MicroUSB.pdf), the power source will likely not turn on or worse, run out very quickly even if you manage to power the circuit. This is due to its low-current and sporadic flunctuations in current as the relay is turned on and off while in use. 
 
-#### 2. Setting Timer Mode Instructions:
+#### Step 2. Setting Timer Mode Instructions:
 -------------------
 
 Now that we have power to our pcb, let's go ahead and configure the timer pcb ([Item #1](https://amzn.to/48rKJi9)) for a test run.
@@ -106,20 +142,20 @@ For my test run, we'll be using P3 with OP time "0003" since we want to test for
 When using the timer in real applications, I wanted to keep my breaks to 15 mins to not allow too long of a gap between work. Thus, the timer was configured for 0900 but feel free to modify based off your goals and needs.
 
 
-#### 3. Trigger Signal:
+#### Step 3. Trigger Signal:
 -------------------
  Next, we need to attach a trigger load in which when pressed, it will initiate the delay prior to the output being held for time (CL) on mode P4 and/or send power to the load that we will attach to the output connections. But before we start connecting pins and wires, let's overview how the trigger works with the micro-usb timer hardware.
 
 With this variation of timer, there are two inputs that the circuit will recognize.
 
-1. **High-level Trigger (3.0V-24.0V)**:
+  1. **High-level Trigger (3.0V-24.0V)**:
 
-_`[show trigger diagram here]`_
+    _`[show trigger diagram here]`_
 
-  the trigger is acknowledge at the rising edge meaning that both momentary and maintained (in off position) switches will turn on the circuit when you first press the button changing the trigger to the on position. With maintained switches, the circuit will not acknowledge the trigger until the next rising edge meaning you can keep it in the on or off position for as long as you like and the relay will only trigger on the up signal of a voltage spike in the 3.0-24 voltage range. 
-  _`[show trigger diagram here]`_
+    the trigger is acknowledge at the rising edge meaning that both momentary and maintained (in off position) switches will turn on the circuit when you first press the button changing the trigger to the on position. With maintained switches, the circuit will not acknowledge the trigger until the next rising edge meaning you can keep it in the on or off position for as long as you like and the relay will only trigger on the up signal of a voltage spike in the 3.0-24 voltage range. 
+    _`[show trigger diagram here]`_
 
-1. **Low-level Trigger (0V-0.2V)**: Similar to High-level trigger but voltage is high in the off position (or very low voltage). This means, that you can tie a battery to the terminals and have the relay start when you disconnect the pins or turn the source off via switch. 
+  2. **Low-level Trigger (0V-0.2V)**: Similar to High-level trigger but voltage is high in the off position (or very low voltage). This means, that you can tie a battery to the terminals and have the relay start when you disconnect the pins or turn the source off via switch. 
    
     For our specific timer usage, I do not recommend this method to those expecting to use the circuit in the medium to long run, especially when testing a prototype. This is due to the continuous presence of voltage at one of the terminals of the button. Over time, there will be voltage drops which could eventually fall in the low-level trigger range if circuit is running long-term.. Additionally, the posibility of accidental triggering is also much higher due to the possibility accidental stripping, tears, or breaks in the connections from moving the prototype which would be entirely avoided if a high-level trigger is utilized. 
 
@@ -140,10 +176,10 @@ Ultimately, the high-level trigger is ideal, as we can easily tie an external dc
 
 
 
-#### 4. Relay Overview:
+#### Step 4. Relay Overview:
 In the timer hardware, our relay follows a standard configuration that is seen across all types of relays, with or without delay, potentials.
 
-##### Relay functionality:
+- Relay Pin Definitions:
 
 
   When a momentary switch/relay is not actuated, it’s in a “normal” state. Depending on how the button is constructed, its normal state can be either an open circuit or a short circuit. Futhermore, This configuration is typical standard that you might see association with switches, relays, and programmable logic controllers (PLCs). So it makes sense that the relay that our timer hardware follows this approach, characterized with by standard 3 pins naming convention NO, COM/C, and NC explained below:
@@ -152,7 +188,7 @@ In the timer hardware, our relay follows a standard configuration that is seen a
   2. Normally Closed (NC): and the other hand, if the button is closed, unless it is actuated, it is considered a normally closed switch, where a press of the button will break the circuit, creating an open circuit
   3. Common Ground (C/COM): When attaching a button, common ground is the first terminal of the relay where you want to connect the first part of your circuit to. When the relay is off the normally closed (NC) and the Common Ground (C/COM) have continuity. conversely, when the relays turned on the normally open(NO) and the common ground (C/COM) have continuity. based off these principles, buttons are wired to one of the terminals NC or NO depending on use case. 
 
-##### Relay Hardware Assembly:
+- **Relay Hardware Assembly**:
 
 for the reasons mentioned in the trigger, we will utilize the normally open and common ground  terminals on the PCB. This is due to the fact that we want an output to be created at the end of the countdown. this means that anytime  before the powering of the relay, the loop will be open. 
 
@@ -177,10 +213,10 @@ So unfortunately, we were going to have to come up with a differenet alternative
 
 
  > **Note**:
->  Although speed is the essence, we still need to be going through some sort of logical process before resorting to quick, hasty actions that sneakily seem like the easiest path for solving the problem at hand. Part of becoming a efficient and productive engineer is learning when to hesitate, take a break from building, realign yourself with any new problems or information presented, and jump back to arranging the best steps forward.
->  The engineering design process is not always sequential or perfect, even if you 'perfectly' planned every step along the way. Sometimes, the most productive action you can make is restraint, although it might not seem in the moment.
->   Realigning yourself with the updated problem at hand ensures you don't follow 'rabbit holes' of a sequential process and turn 5 minute solutions into 5 hour mistakes which will yield better result in the long run.
-> For further information which might help you in learning from my time-wasting mistakes, feel free to see "Mistakes I wish I understood before developing" section in ["Acknowledgements.md"](Acknowledgements.md).
+  >  Although speed is the essence, we still need to be going through some sort of logical process before resorting to quick, hasty actions that sneakily seem like the easiest path for solving the problem at hand. Part of becoming a efficient and productive engineer is learning when to hesitate, take a break from building, realign yourself with any new problems or information presented, and jump back to arranging the best steps forward.
+  >  The engineering design process is not always sequential or perfect, even if you 'perfectly' planned every step along the way. Sometimes, the most productive action you can make is restraint, although it might not seem in the moment.
+  >   Realigning yourself with the updated problem at hand ensures you don't follow 'rabbit holes' of a sequential process and turn 5 minute solutions into 5 hour mistakes which will yield better result in the long run.
+  > For further information which might help you in learning from my time-wasting mistakes, feel free to see "Mistakes I wish I understood before developing" section in ["Acknowledgements.md"](Acknowledgements.md).
 
 
 
@@ -200,26 +236,28 @@ So considering that I will use this notification system mainly during breaks, no
  Next we have option number two, which ultimately still uses the speaker, but doesn't involve utilizing an extra battery which would cost materials, size, and Project clutter (as suggestted in #1). Instead,  we can create a creative solution that splits the USB power source prior to the attachment  into the hardware, which would ultimately split the power source in parallel with one pathway still being the the input of the timer (with microusb male headers) requiring minimum of 50 mA and the other pathway powering the speaker PCB (in Normally Open configuration) only when the relay is turned on. This means after accounting how much current is needed (estimateed from speaker's 12V/15mA specification), the estimated (650mA current required when relay turns on would allow concurrent power to both the timer and speaker.
   been load to the speaker attached to.
 
- let's first attempt option #4  as this keeps intended speaker in the solution without having to configure additional components which require manual hardwiring which reduces intended modularization of hardwareAs we need to manually hardwire some components and ensure notification system will suffice. 
+ let's first attempt option #4  as this keeps intended speaker in the solution without having to configure additional components which require manual hardwiring which reduces intended modularization of hardwareAs we need to manually hardwire some components and ensure notification system will suffice.
 
- using some hardware hacks that I've learned over having to configure so many different circuits,  I will utilize one of my favorite methods that do not require soldering, gluing spray, connectors, or any extra tools apart from the potential splicing tool to make a node/junction connecting many terminals from different components in a circuit.
 
+> Ideally, you don't need any soldering to do this project; however, depending on cost, materials, and/or preference, you might want/need to solder or use additional hardware to make sure each seperate electronic in the overall build has the ability to connect to the designated termianal, and that each connection is tightly secure, and there are no loose wires. Last thing you want prior to creating your first prototype is your circuit to start disconnecting pins due to loose and flimsy wires that couldn't have been avoided with better hardware configuration tools. .I'll be thinking the hardware as I explained the guide, but feel free to click here to see the full list.
 
  
  Using ['Type-E Lever Wire Connectors"](https://amzn.to/3NW4eHX) with a Y splitter that splits one input into 2 options such as a [microusb (Micro micro to dual male micro headers) type](https://amzn.to/3NUKOmL) or a [or a USB (1 Male input, 2 USB Female](https://amzn.to/41XZaIH) to allow split on cheap wire instead of splicing the product, you can allow one end for the hardware and another for the speaker as shown below
 
  [image of speaker with usb] 
 
- By no means are these components are not required which is why I placed these supplementary components apart from hardware required in beginning of instructions. Additionally, or those that refuse to buy the extra components, and/or don't create circuits often, you could just as easily manually splice your own wires in formation ([use link as reference only](https://amzn.to/3tC23Ct)). With many alternatives in connecting nodes (i.e., breadboard, spade connectors, and/or soldering iron), please do not feel forced to buy products you will only use once.
+For those that don't want or have much use in the extra components,  you could just as easily manually splice your own wires following the splicing configuration ([seen here](https://amzn.to/3tC23Ct)). Choose one 2 wires you are okay with splicing and configure both methods shown in product: one for connecting the header to the timer and another for connecting pins to the speaker circuit. For joining the nodes, feel free to be creative with the electronic hardware you have as there are many alternatives in connecting 2 junctions to the same node (i.e., breadboard, spade connectors, and/or soldering iron, hot-air gun with covers), please do not feel forced to buy products you will only use once.
  
-  However, using these shortcut will definitely save you in time on effort used, **especially** if you constanting like working with electronics. This is because often times, despite detailed time and effort in simulation, real-time prototypes fail to work due to unforseen problems that couldn't have been calculated
+  
+After pulling out the cable or turning power off, you can connect the switch to the timer pcb (momentary push button). I utilized the positive and negative pins (left, bottom two pin connections) enabled by our 5V USB connection (seen below):
 
 
-##### Hardware Notes [TODO: finish afff linkslater]:
-Ideally, you don't need any soldering to do this project; however, depending on cost, materials, and/or preference, you might need or just want to solder connections to make sure each button prong has a cable, each connection is tightly secure, and there are no loose wires. 
+Then, attached one wire into the positive header from the 2 pins on the bottom left terminal connections on the timer hardware and placed to one terminal connection prong of my button hardware. , I attached the second prong to the High-level trigger input connection (or the positive trigger on seven segment variation) due to the output being ~5V due to powering from a usb connection. Lastly, I connected the ground terminal from our power supply enabled from the 5V connection to the common ground (middle pin of three). Once connection have been made, pressing the switchs enabled triggering of the relay, as confirmed with clickikng sound and LED notification without the need for an external source of power.
 
-Let's face it, soldering takes time, especially if you haven't learned the practice, or practiced solder lately. Before you commit or groan from the fact that you might, please take a look at these hardware options that literally remove the need to solder altogether. These prototyping essentials and wiring helpers I keep a part of my prototyping toolkit to remove the need to take annoying and arduous time in testing reducing hours, days, to even week delays in getting a working solution:
+See below for configuration after all steps are done.
 
+- **Tools that drastically reduce connecting wires (with links):**
+Using these shortcut will definitely save you in time on effort used, **especially** if you constanting like working with electronics.
 Wiring two different wires (No Breadboard, No Soldering, No Splicing required):
 1. E-type inline connectors 
 2. 1-to-1 inline connectors
@@ -238,33 +276,25 @@ Connecting Prongs (No Breadboard, No Soldering, but Splicing Suggested)
 
 
 
-After pulling out the cable or turning power off, you can connect the switch to the timer pcb (momentary push button). I utilized the positive and negative pins (left, bottom two pin connections) enabled by our 5V USB connection and attached one wire into the positive header from the 2 pins on the bottom left terminal connections on the timer hardware and placed to one terminal connection prong of my button hardware. Then, I attached the second prong to the High-level trigger input connection (or the positive trigger on seven segment variation) due to the output being ~5V due to powering from a usb connection. Lastly, I connected the ground terminal from our power supply enabled from the 5V connection to the common ground (middle pin of three). Once connection have been made, pressing the switchs enabled triggering of the relay, as confirmed with clickikng sound and LED notification without the need for an external source of power.
-
-
-
-#####Note(TPDP) I the top input of the 5 of three connections)  After connection are secure and intact, I attached both ground  
-
-Additionally,splice the  usb cable and utilize a bread board (or painless E-Type connectors) to allow several pins to access the consistent voltage source coming from  To do this, you can can connect a wire to the positive (indicated with '+' on hardware) terminal via screwdriver and connected the other end of the wire to one end of the momentary push button. 
-
-- Note: If you are using a 3-pin type of connectors as seen in common relay switches, you can attach power to the NO (Normally Open) pin, and attach the common Ground circuit to the positive terminal of the triggering pin on the PCB
-- Note #2: For those using external power supply, please keep in mind that your connections will be a little different than the directions above but will still utilize the 
-
-
-#### Step 4: Attach external Speaker as Load
-Now, we are ready to attach the speaker LED to the output of the relay. If you only used a usb connection (as shown in my design) to power the timer pcb, the timer pcb unfortunately does not have the ability to power the 2-pin speaker due to a reduced the amount of current flow from using only the 5V usb connection. 
+#### Step 5: Attach external Speaker as Load
+Now, we are ready to attach the speaker to the output of the relay. If you only used a usb connection (as shown in my design) to power the timer pcb, the timer pcb unfortunately does not have the ability to power the 2-pin speaker due to a reduced the amount of current flow from using only the 5V usb connection. 
 
 - Note: Because I did not want to include an extra power source as I didn't want to make the hardware bulky or add too much wiring which could be ripped or cut, I used a two way splitter which 'hacked' the need for a battery or external power for our load as explained in the hardware documentation. There are many many variations of this, so please don't feel limited in having to purchase this item as well. You can use a 9V battery by itself, or attached to power supply and just feed it to the speaker with the wiring described in the following step.
 
-#################finish this step ###########################
+- Note: If you are using a 3-pin type of connectors as seen in common relay switches, you can attach power to the NO (Normally Open) pin, and attach the common Ground circuit to the positive terminal of the triggering pin on the PCB
+- Note #2: For those using external power supply, please keep in mind that your connections will be a little different than the directions above but will still utilize the
 
-#### Step 4: Test Timer
-Once everything has been configured, you should hear a satisfying beep of your circuit once the time delay has counted down to zero for a specified amount of time. I recommend to lower the time the load Will run to minimize noise and Power used during output.
-#### Step 5: Attach Supporting Hardware 
-Since you need a way to place all components in a secure location, we're going to go ahead and create supporting hardware in which we can organize the components so the connections aren't severed while the timer is supposed to run and we can essentially use it anywhere a USB Port is allowed.
-- DIY hardware
-- 3D printed
 
-#### Step 1: Configure Timer
+
+~~Next, we wi Note(TPDP) I the top input of the 5 of three connections)  After connection are secure and intact, I attached both ground Additionally, splice the  usb cable and utilize a bread board (or painless E-Type connectors) to allow several pins to access the consistent voltage source coming from  To do this, you can can connect a wire to the positive (indicated with '+' on hardware) terminal via screwdriver and connected the other end of the wire to one end of the momentary push button.~~ 
+
+#### Step 6: Test Timer
+Once everything has been configured, you should hear a satisfying beep of your circuit once the time delay has counted down to zero for a specified amount of time. For those not wanting to hear the speaker for too long, I recommend to lower the time (CL) the load will run as 1-5 seconds should be more than enough to make sure you hear the notification.
+#### Step 7: Attach Supporting Hardware (Optional)
+Since you need a way to place all components in a secure location, and are going to be testing it in the real world, we need to make sure that the overall build will survive its testing phase. I am big advocate for glue guns, as they do not disrupt any electrical connections and provide a quick and easy solution to essentially stick any component anywhere without having to spend all the extra time and hardware assembling through other methods that might require a 3d printer or solder that additionally require mounting via screws. Here is the [glue gun](https://amzn.to/3ScX5oQ) I use that has saved countless hours as some projects take more time in creating enclosures than the the assembly of the circuit.
+
+
+
 
 ### Attributions:
 -------------------

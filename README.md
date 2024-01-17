@@ -22,7 +22,7 @@ This idea resulted from the frustration and problem that occurred from not being
 ### Supplies:
 -------------------
 
-If you have Breaboard wires and the ability to solder, then you only need one option from each numbered required from this section.
+If you have the materials needed to create the circuit and test ( could be through breadboard, soldering, splicing wires, or any other way you can think of, then you only the materials listed below, where you would select one option from each component represented by a number (out of three).
 ###### Required Items (Choose one from each numbered item): 
 
 1. **Timer Circuit**

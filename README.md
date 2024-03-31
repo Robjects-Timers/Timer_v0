@@ -6,7 +6,7 @@
 
 This is the first of many iterations of the engineering design process with the intention of making a timer product from scratch. 
 ##### Context: 
-This idea resulted from the frustration and problem that occurred from not being able to focus on my tasks due to being distracted from my phone. And while perhaps some of you might just propose that I just not use the phone or put it away. 
+This idea resulted from the frustration and problem that occurred from not being able to focus on my tasks due to being distracted from my phone. And while perhaps some of you might just be able to leave your phone with effortless determination, I rather procastinate with and replace a bad habit with a less worse habit. If you find my projects interesting and useful, please consider donating or supporting my [YouTube Channel]() to fund the completely free, open-source projects intended for the community!
 
 
 
@@ -46,7 +46,7 @@ Let's go ahead and overview the timer PCB Hardware by breaking it down into 5 ma
 -------------------
 
 According to the manual for our micro-usb timer hardware,there are 2 main ways that you can power the circuit: 
-   1.  Through the USB Socket Connection Port (**Easy**)
+   1. Through the USB Socket Connection Port (**Easy**)
    2. Through pins via DC power source (**Could be Complex**)
    
 For the majority of this tutorial, we will stick to powering the circuit via the USB C socket connector to reduce complexity, cost and unecessary steps to fit with the speed constraint in the YouTube Video. 

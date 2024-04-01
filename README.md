@@ -8,7 +8,6 @@
 # Table of Contents
 
     - [Context:](#context)
-    - [Table of Contents:](#table-of-contents-1)
       - [Timer Assembly Guide](#timer-assembly-guide)
         - [Objectives:](#objectives)
         - [Supplies:](#supplies)

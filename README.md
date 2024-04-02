@@ -8,7 +8,20 @@
 # Overview
 
 [TODO: add finished product image]
-This is the first of many iterations of the engineering design process with the intention of making a timer product from scratch.
+
+
+``` 
+[ DELETE BLOCK AFTER IMPORT ]
+This repository will be the first of multiple iterations, with each iteration aimed at improving specific criteria and ultimately creating the best solution using all research and data gathered the final iteration. The iterative approach will allow us to incorporate feedback, address limitations, and create real solutions quickly that may be replicated and exported to suit whatever use case your imagination and persistence grows.
+ 
+ 
+This iterative design methodology aligns with best practices in solution development, enabling us to progressively enhance the timer's performance and usability based on real-world testing and user feedback.
+By continuously refining the solution through successive iterations, we can ensure that the final version of the timer is optimized to effectively mitigate the impact of distractions and support sustained focus on important tasks. 
+
+This timer will help you manage your time more effectively, allowing you to focus on your work and achieve your long-term goals. Additionally, by repetitively partaking in actions that benefit you in the future, the brain is subsequently rewired in a process known as [self-directed neuroplasticity](https://sophia.stkate.edu/cgi/viewcontent.cgi?article=1019&context=ma_hhs). For instance, by engaging in repetitive, intentional action, the brain triggers a series of neurological changes. Over time, this leads to the formation of new neural pathways that build cognitive reserve and incredibly make intellectually stimiluating activities seem natural! 
+
+```
+
 
 # Table of Contents
 

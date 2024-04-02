@@ -68,7 +68,7 @@ I will be creating several iterations of full hardware/software prototypes that 
 ## Timer Assembly Guide
 
 -------------------
-[TODO: add project in use img here]
+[TODO: add overhead project img here]
 
 
 ### Objectives
@@ -94,17 +94,17 @@ I will be creating several iterations of full hardware/software prototypes that 
 -------------------
 [image of all supplies with label]
 
-If you have Breaboard wires and the ability to solder, then you only need one option from each numbered required from this section.
+If you have Breadboard wires and the ability to solder, then you only need one option from each numbered required from this section.
 
 #### Required Items (Choose one from each numbered item)
 
-1. **Timer Circuit**
+1. **Timer Circuit** [TODO: add side by side comparison]
     1. [Seven Segment Display (Type-C)](https://amzn.to/48rKJi9)
     2. [LED Display (Type-C or Micro-Usb)](https://amzn.to/3O03DFd)
-2. **External DC Audio Speaker**
+2. **External DC Audio Speaker** [TODO: add side by side comparison]
     1. [continous noise](https://amzn.to/3NEzoDs)
     2. [intermittent noise](https://amzn.to/3TthQhk)
-3. **Trigger Switch**
+3. **Trigger Switch** [TODO: add side by side comparison]
     1. [Micro Limit Switch (Momentary)](https://amzn.to/488LcWz)
     2. [Push Button (Momentary or latching)](https://amzn.to/3RBcuOw)
 

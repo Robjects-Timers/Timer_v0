@@ -153,6 +153,7 @@ I will be creating several iterations of full hardware/software prototypes that 
 #### Step 3. 
 
 -------------------
+
 ```
 
 [TODO:fiil-or-delete-if-not-applicable]

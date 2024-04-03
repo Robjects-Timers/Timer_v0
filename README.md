@@ -156,12 +156,12 @@ I will be creating several iterations of full hardware/software prototypes that 
 
 ```
 
-[TODO:fiil-or-delete-if-not-applicable]
+[TODO:fill-or-delete-if-not-applicable]
 - ** Optional Helpful Tools (with links):**
 
 1. **product-title-1** [TODO:add side by side comparison]
     1. [link-name-1-a](link-url) [TODO: add label a and b in side by side comparison]
-    2. [link-name-1-b)](link-url) [TODO: add label a and b in side by side comparison]
+    2. [link-name-1-b](link-url) [TODO: add label a and b in side by side comparison]
 2. **product-title-2** [TODO: add side by side comparison]
     1. [link-name-2-a](link-url) [TODO: add label a and b in side by side comparison]
     2. [link-name-2-a](link-url) [TODO: add label a and b in side by side comparison]

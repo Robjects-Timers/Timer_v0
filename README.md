@@ -7,7 +7,8 @@
 
 # Overview
 
-[TODO: add finished product image]
+
+[TODO: add product image]
 This is the first of many iterations of the engineering design process with the intention of making a timer product from scratch.
 
 # Table of Contents

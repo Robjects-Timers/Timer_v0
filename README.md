@@ -1,4 +1,4 @@
-[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
+[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa] [![Run TODO to Issue](https://github.com/Robjects-Timers/Timer_v0/actions/workflows/todo-to-issue.yml/badge.svg?branch=master)](https://github.com/Robjects-Timers/Timer_v0/actions/workflows/todo-to-issue.yml)
 
 # TIMER_V0
 

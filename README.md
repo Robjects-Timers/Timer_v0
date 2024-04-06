@@ -1,10 +1,9 @@
-
 [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 
 # TIMER_V0
 
 
-[TODO: add finished product image]
+<!--[TODO: add finished product image]-->
 This is the first of many iterations of the engineering design process with the intention of making a timer product from scratch.
 
 ##### Context: 

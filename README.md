@@ -98,7 +98,8 @@ I will be creating several iterations of full hardware/software prototypes that 
 ### Supplies
 
 -------------------
-[image of all supplies with label]
+
+[TODO:image of all supplies with label]
 
 If you have Breadboard wires and the ability to solder, then you only need one option from each numbered required from this section.
 

@@ -13,15 +13,15 @@ This idea resulted from the frustration and problem that occurred from not being
 # Overview
 
 
-[TODO: add product image]
-This is the first of many iterations of the engineering design process with the intention of making a timer product from scratch.
+<!-- [TODO: add product image] -->This is the first of many iterations of the engineering design process with the intention of making a timer product from scratch.
 
 # Table of Contents
 
 - [TIMER\_V0](#timer_v0)
+        - [Context:](#context)
 - [Overview](#overview)
 - [Table of Contents](#table-of-contents)
-  - [Context](#context)
+  - [Context](#context-1)
   - [Specific Problem to Solve](#specific-problem-to-solve)
   - [Solutions](#solutions)
   - [Timer Assembly Guide](#timer-assembly-guide)
@@ -74,7 +74,7 @@ I will be creating several iterations of full hardware/software prototypes that 
 ## Timer Assembly Guide
 
 -------------------
-[TODO: add overhead project img here]
+<!-- [TODO: add overhead project img here] -->
 
 
 ### Objectives
@@ -99,19 +99,19 @@ I will be creating several iterations of full hardware/software prototypes that 
 
 -------------------
 
-[TODO:image of all supplies with label]
+<!-- [TODO:image of all supplies with label] -->
 
 If you have Breadboard wires and the ability to solder, then you only need one option from each numbered required from this section.
 
 #### Required Items (Choose one from each numbered item)
 
-1. **Timer Circuit** [TODO: add side by side comparison]
+1. **Timer Circuit** <!-- [TODO: add side by side comparison] -->
     1. [Seven Segment Display (Type-C)](https://amzn.to/48rKJi9)
     2. [LED Display (Type-C or Micro-Usb)](https://amzn.to/3O03DFd)
-2. **External DC Audio Speaker** [TODO: add side by side comparison]
+2. **External DC Audio Speaker** <!-- [TODO: add side by side comparison] -->
     1. [continous noise](https://amzn.to/3NEzoDs)
     2. [intermittent noise](https://amzn.to/3TthQhk)
-3. **Trigger Switch** [TODO: add side by side comparison]
+3. **Trigger Switch** <!-- [TODO: add side by side comparison] -->
     1. [Micro Limit Switch (Momentary)](https://amzn.to/488LcWz)
     2. [Push Button (Momentary or latching)](https://amzn.to/3RBcuOw)
 

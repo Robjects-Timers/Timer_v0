@@ -3,7 +3,13 @@
 
 # TIMER_V0
 
--------------------
+
+[TODO: add finished product image]
+This is the first of many iterations of the engineering design process with the intention of making a timer product from scratch.
+
+##### Context: 
+This idea resulted from the frustration and problem that occurred from not being able to focus on my tasks due to being distracted from my phone. And while perhaps some of you might just be able to leave your phone with effortless determination, I rather procastinate with and replace a bad habit with a less worse habit. If you find my projects interesting and useful, please consider donating or supporting my [YouTube Channel]() to fund the completely free, open-source projects intended for the community!
+
 
 # Overview
 

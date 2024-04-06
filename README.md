@@ -3,7 +3,7 @@
 
 # TIMER_V0
 
--------------------
+
 [TODO: add finished product image]
 This is the first of many iterations of the engineering design process with the intention of making a timer product from scratch.
 
@@ -11,36 +11,72 @@ This is the first of many iterations of the engineering design process with the 
 This idea resulted from the frustration and problem that occurred from not being able to focus on my tasks due to being distracted from my phone. And while perhaps some of you might just be able to leave your phone with effortless determination, I rather procastinate with and replace a bad habit with a less worse habit. If you find my projects interesting and useful, please consider donating or supporting my [YouTube Channel]() to fund the completely free, open-source projects intended for the community!
 
 
+# Overview
+
+
+[TODO: add product image]
+This is the first of many iterations of the engineering design process with the intention of making a timer product from scratch.
 
 # Table of Contents
 
-    - [Context:](#context)
-      - [Timer Assembly Guide](#timer-assembly-guide)
-        - [Objectives:](#objectives)
-        - [Supplies:](#supplies)
-          - [Required Items (Choose one from each numbered item):](#required-items-choose-one-from-each-numbered-item)
-          - [Optional \& Supplementary:](#optional--supplementary)
-        - [Timer Build Assembly Guide](#timer-build-assembly-guide)
-          - [Step 1. Powering the circuit:](#step-1-powering-the-circuit)
-          - [Step 2. Setting Timer Mode Instructions:](#step-2-setting-timer-mode-instructions)
-          - [Step 3. Trigger Signal:](#step-3-trigger-signal)
-          - [Step 4. Relay Overview:](#step-4-relay-overview)
-          - [Step 5: Attach external Speaker as Load](#step-5-attach-external-speaker-as-load)
-          - [Step 6: Test Timer](#step-6-test-timer)
-          - [Step 7: Attach Supporting Hardware (Optional)](#step-7-attach-supporting-hardware-optional)
-        - [Attributions:](#attributions)
-        - [License Information](#license-information)
-            - [License](#license)
+- [TIMER\_V0](#timer_v0)
+- [Overview](#overview)
+- [Table of Contents](#table-of-contents)
+  - [Context](#context)
+  - [Specific Problem to Solve](#specific-problem-to-solve)
+  - [Solutions](#solutions)
+  - [Timer Assembly Guide](#timer-assembly-guide)
+    - [Objectives](#objectives)
+    - [Supplies](#supplies)
+      - [Required Items (Choose one from each numbered item)](#required-items-choose-one-from-each-numbered-item)
+      - [Optional \& Supplementary](#optional--supplementary)
+    - [Timer Build Assembly Guide](#timer-build-assembly-guide)
+      - [Step 1. Powering the circuit](#step-1-powering-the-circuit)
+      - [Step 2. Setting Timer Mode Instructions](#step-2-setting-timer-mode-instructions)
+      - [Step 3. Trigger Signal](#step-3-trigger-signal)
+      - [Step 4. Relay Overview](#step-4-relay-overview)
+      - [Step 5: Attach external Speaker as Load](#step-5-attach-external-speaker-as-load)
+      - [Step 6: Test Timer](#step-6-test-timer)
+      - [Step 7: Attach Supporting Hardware (Optional)](#step-7-attach-supporting-hardware-optional)
+    - [Attributions](#attributions)
+    - [License Information](#license-information)
+      - [License](#license)
 
 ## Context
 
-This idea resulted from the frustration and problem that occurred from not being able to focus on my tasks due to being distracted from my phone. And while perhaps some of you might just propose that I just not use the phone or put it away.
+This idea resulted from the frustration and problem that occurred from not being able to focus on my tasks due to being distracted from my phone. And while perhaps some of you may just be able to, very admirably, leave your phone with relentless determination, and move on to your long-term goals as effortless as it was to do the other habit.
+That being said, we have to be both wise and smart and reduce the amount of mental friction we intend to have to partake; otherwise, I don’t stand a chance changing my behavior and might end up worse than I started from the depression of failure. Due to this, I will work on replacing the worst habit of checking my phone and ‘less worse’ habit such as working on these engineering projects so that either way, I am procrastinating, but I am still inside the mental (and physical) environment that my day-to-day career tasks which might end up indirectly improving my productivity.
+
+## Specific Problem to Solve
+
+Essentially, I want to eliminate the justification of using my phone for time related apps such as timer, stopwatch, clock, alarm, etc.?
+
+Objectively, this problem is arguably nonexistent if you use only the productive apps for its intended purpose while trying to focus on your long-term goals without distractions.
+
+But really… You do that 100% of time? Really bro...? (props if you honestly do though!)
+
+## Solutions
+
+I will be creating several iterations of full hardware/software prototypes that use different hardware/software every iteration. The hope is to incrementally increase complexity of builds that stick to specified criteria common for creating tech solutions.
+
+```
+
+  "why don't you just buy a cheap clock, you goon? Arrr ya dumb or something...?" - online troll somewhere
+
+  My response: Yes... you can solve this problem simply with a quick purchase of a timer, stopwatch from a 1 minute search on Amazon. However, that won't really solve the problem at hand and create a alternative procrastination habit useful for my career goals. Also, where's the fun in buying a solution that won't impact you at your very core increasing the probability of success in defeating your bad habit...? 
+  And, where else can you flex your engineering skills from all different fields of engineering, and have a chance to showcase to my fellow engineering community that can laugh or implement their own projects incrementally improving your life in the best way? 
+
+```
+
+ I'll be constantly working on different projects apart from these iterations. If you find my projects interesting and useful, check out my [YouTube Channel]() where I post videos of completed builds (projected 2025) of which showcase the free, open-source projects intended for the community! Please consider donating to my [Patreon](patreon.com/MrMikeyMarks) and  the financial oblior subscribing to 
+
+
 
 ## Timer Assembly Guide
 
 -------------------
-[TODO: add project in use img here]
-### Objectives:
+[TODO: add overhead project img here]
+
 
 ### Objectives
 
@@ -65,17 +101,17 @@ This idea resulted from the frustration and problem that occurred from not being
 -------------------
 [image of all supplies with label]
 
-If you have Breaboard wires and the ability to solder, then you only need one option from each numbered required from this section.
+If you have Breadboard wires and the ability to solder, then you only need one option from each numbered required from this section.
 
 #### Required Items (Choose one from each numbered item)
 
-1. **Timer Circuit**
+1. **Timer Circuit** [TODO: add side by side comparison]
     1. [Seven Segment Display (Type-C)](https://amzn.to/48rKJi9)
     2. [LED Display (Type-C or Micro-Usb)](https://amzn.to/3O03DFd)
-2. **External DC Audio Speaker**
+2. **External DC Audio Speaker** [TODO: add side by side comparison]
     1. [continous noise](https://amzn.to/3NEzoDs)
     2. [intermittent noise](https://amzn.to/3TthQhk)
-3. **Trigger Switch**
+3. **Trigger Switch** [TODO: add side by side comparison]
     1. [Micro Limit Switch (Momentary)](https://amzn.to/488LcWz)
     2. [Push Button (Momentary or latching)](https://amzn.to/3RBcuOw)
 
@@ -85,13 +121,14 @@ If you have Breaboard wires and the ability to solder, then you only need one op
 
 -------------------
 
-Let's go ahead and overview the timer PCB Hardware by breaking it down into 5 main parts: **Power**, **Trigger**, **Relay**
+Let’s go ahead and overview the timer PCB Hardware by breaking it down into 5 main parts: **Power**, **Trigger**, **Relay**
 
 #### Step 1. Powering the circuit
 
 -------------------
 
-According to the manual for our micro-usb timer hardware,there are 2 main ways that you can power the circuit: 
+According to the manual for our micro-usb timer hardware,there are 2 main ways that you can power the circuit:
+
    1. Through the USB Socket Connection Port (**Easy**)
    2. Through pins via DC power source (**Could be Complex**)
 
@@ -107,7 +144,7 @@ Depending on what type of timer pcb variation you bought, you can grab either a 
 
 -------------------
 
-Now that we have power to our pcb, let's go ahead and configure the timer pcb ([Item #1](https://amzn.to/48rKJi9)) for a test run.
+Now that we have power to our pcb, let’s go ahead and configure the timer pcb ([Item #1](https://amzn.to/48rKJi9)) for a test run.
 
 Here are the directions needed for changing timer hardware functionality:
 
@@ -115,12 +152,12 @@ _For those using alternative timer hardware, please see note below for correspon
 > **Note**: For those using the Seven Segment Display Timer PCB variation, The configuration steps follow the exact ordering that the tutorial pcb variation does. For example, P2 will correspond to P1.2 (P3->P1.2, P4->P2) However, please feel free to fact check for understanding and browse at all possible configurations as well
 >
 - **Modes P1-P4 Explanation**:
-  - **P1-P3**: Upon receiving a triggering signal, modes P1-P3 all turn the relay on for a duration of pre-configured "OP" time until it turns off when the countdown hits zero. However, the sublety lies on what happens if a trigger is registered before the countdown "OP" hits zero.
+  - **P1-P3**: Upon receiving a triggering signal, modes P1-P3 all turn the relay on for a duration of pre-configured “OP” time until it turns off when the countdown hits zero. However, the sublety lies on what happens if a trigger is registered before the countdown “OP” hits zero.
     - **P1**:Subsequent triggering signals during the OP time have no effect.
     - **P2**:Subsequent triggering signals during the OP time reset the timer.
     - **P3**:Subsequent triggering signals during the OP time reset the timer, causing the relay to turn off and stop the timing process.
 
-  - **P4**: Mode P4 begins exactly as its predecessor with one extra pre-selected variable "CL" added. "CL" determines exactly how long the relay will be on, or "closed time" if you will. Which, if you plan to use in close-proximity with the dc audio speaker, you want to set to quick as the speaker can be an earful during timed breaks if you don't decide to muffle it.
+  - **P4**: Mode P4 begins exactly as its predecessor with one extra pre-selected variable “CL” added. “CL” determines exactly how long the relay will be on, or “closed time” if you will. Which, if you plan to use in close-proximity with the dc audio speaker, you want to set to quick as the speaker can be an earful during timed breaks if you don’t decide to muffle it.
 
 - **To configure different modes (P1-P7)**
 >
@@ -130,7 +167,7 @@ _For those using alternative timer hardware, please see note below for correspon
 > 4. Hold Set button until P* stops blinking
  >
 
-- **Configuring Time Variables (OP, CL, etc...)**
+- **Configuring Time Variables (OP, CL, etc…)**
 >
 > 1. Turn on and ensure mode desired is seen on display (see step above if mode desired is incorrect)
 > 2. Hold set until P* starts blinking
@@ -140,11 +177,11 @@ _For those using alternative timer hardware, please see note below for correspon
 > 5.  
 
 - **Modes Utilized for timer build**:
-We'll be using the P1-P3 (P1.1,P1.2,P1.3 on USB-C variation) for basic test runs and P4 (P2 on USB-C) after we finish all testing and are ready to finalize the prototype.
+We’ll be using the P1-P3 (P1.1,P1.2,P1.3 on USB-C variation) for basic test runs and P4 (P2 on USB-C) after we finish all testing and are ready to finalize the prototype.
   - **Testing the Circuit:**
     - Test Mode: P3 (P1.3 for Seven Segment Variation)
 OP Time: 0003 (3 Seconds)
-For my test run, we'll be using P3 with OP time "0003" since we want to test for simple execution of one push on our trigger with options to stop the relay during OP countdown in case there are problems with the output connection to our speaker. This will enable fast prototyping and minimal delay or complexity while adding safety measures.
+For my test run, we’ll be using P3 with OP time “0003” since we want to test for simple execution of one push on our trigger with options to stop the relay during OP countdown in case there are problems with the output connection to our speaker. This will enable fast prototyping and minimal delay or complexity while adding safety measures.
 - **Running the Circuit (For everyday use)**:
   - Mode Used: P4 (P2 for Seven Segment Variation)
   - OP Time: 0900 (15 Minutes)
@@ -154,7 +191,7 @@ When using the timer in real applications, I wanted to keep my breaks to 15 mins
 #### Step 3. Trigger Signal
 
 -------------------
- Next, we need to attach a trigger load in which when pressed, it will initiate the delay prior to the output being held for time (CL) on mode P4 and/or send power to the load that we will attach to the output connections. But before we start connecting pins and wires, let's overview how the trigger works with the micro-usb timer hardware.
+ Next, we need to attach a trigger load in which when pressed, it will initiate the delay prior to the output being held for time (CL) on mode P4 and/or send power to the load that we will attach to the output connections. But before we start connecting pins and wires, let’s overview how the trigger works with the micro-usb timer hardware.
 
 With this variation of timer, there are two inputs that the circuit will recognize.
 
@@ -175,9 +212,9 @@ Ultimately, the high-level trigger is ideal, as we can easily tie an external dc
 > _`[show timing diagram here with flip flop included]`_
 >
 >   [diagram of flip flop vs diagram of imagined timer hardware timing diagram or animation]
->   For educated Electrical Engineers like myself, your brain might be screaming (or cringing :P) "flip-flops! AHHHH!" or some other familiar Digital electronic synchronization circuit.
+>   For educated Electrical Engineers like myself, your brain might be screaming (or cringing :P) “flip-flops! AHHHH!” or some other familiar Digital electronic synchronization circuit.
 >
->   There are some differences of course to those pesky edge-triggered flippy flops. however, in real-time, "are they really even there...?" I mean, if flip-flop clocks fall so fast, are they really there?"
+>   There are some differences of course to those pesky edge-triggered flippy flops. however, in real-time, “are they really even there…?” I mean, if flip-flop clocks fall so fast, are they really there?”
 
 #### Step 4. Relay Overview
 
@@ -199,9 +236,9 @@ Note: Ideally, we should be able to use the PCB power supplied from microusb cab
 
  [show image]
 
-  I mean a microcontroller can power this speaker with a 3.3V output pin... it would make sense or so I thought...
+  I mean a microcontroller can power this speaker with a 3.3V output pin… it would make sense or so I thought…
 
-But to our dissapointment, the manual shows (in the smallest of prints if I may add) that when powering the timer pcb **with a micro USB cable**, the 2 input pins on the bottom left corner output a 5V voltage with 15 mA which unfortunately doesn't reach a high enough current. For instance, the speaker, although can work with currents as low as 15mA, requires a voltage of at least 12V for it to work with that current output according to the specifications.
+But to our dissapointment, the manual shows (in the smallest of prints if I may add) that when powering the timer pcb **with a micro USB cable**, the 2 input pins on the bottom left corner output a 5V voltage with 15 mA which unfortunately doesn’t reach a high enough current. For instance, the speaker, although can work with currents as low as 15mA, requires a voltage of at least 12V for it to work with that current output according to the specifications.
 
 So unfortunately, we were going to have to come up with a differenet alternative. So, going back to brainstorming, we need a solution that effectively adds more power to the speaker to enable it to power on as countdown stops. Or, we need to completely reframe the notification system entirely and redefine what is needed to know when a timer is done based on intended use case/purpose of a prototype. Here are some options that could work, and should be quick to do if planned correctly:
 
@@ -212,35 +249,35 @@ So unfortunately, we were going to have to come up with a differenet alternative
 
  > **Note**:
   > Although speed is the essence, we still need to be going through some sort of logical process before resorting to quick, hasty actions that sneakily seem like the easiest path for solving the problem at hand. Part of becoming a efficient and productive engineer is learning when to hesitate, take a break from building, realign yourself with any new problems or information presented, and jump back to arranging the best steps forward.
-  > The engineering design process is not always sequential or perfect, even if you 'perfectly' planned every step along the way. Sometimes, the most productive action you can make is restraint, although it might not seem in the moment.
-  > Realigning yourself with the updated problem at hand ensures you don't follow 'rabbit holes' of a sequential process and turn 5 minute solutions into 5 hour mistakes which will yield better result in the long run.
-  > For further information which might help you in learning from my time-wasting mistakes, feel free to see "Mistakes I wish I understood before developing" section in ["Acknowledgements.md"](Acknowledgements.md).
+  > The engineering design process is not always sequential or perfect, even if you ‘perfectly’ planned every step along the way. Sometimes, the most productive action you can make is restraint, although it might not seem in the moment.
+  > Realigning yourself with the updated problem at hand ensures you don’t follow ‘rabbit holes’ of a sequential process and turn 5 minute solutions into 5 hour mistakes which will yield better result in the long run.
+  > For further information which might help you in learning from my time-wasting mistakes, feel free to see “Mistakes I wish I understood before developing” section in [“Acknowledgements.md”](Acknowledgements.md).
 
-before deciding on, seems like the easiest choice, let's go ahead and use some sort of logical reasoning  to decide which approach to tackle. reigning ourselves with our speed constraint, we need something to be the quickest so this easily removes option #3 as we would too long (in product search and shipping) for our new package which on top of the additional money of finding another speaker.  before resorting to this option, let's make sure we cannot solve it with an easier and much more cheaper solution. So, considering option four, we would have to essentially align ourselves with the purpose of the project, or in this case prototype.
+before deciding on, seems like the easiest choice, let’s go ahead and use some sort of logical reasoning  to decide which approach to tackle. reigning ourselves with our speed constraint, we need something to be the quickest so this easily removes option #3 as we would too long (in product search and shipping) for our new package which on top of the additional money of finding another speaker.  before resorting to this option, let’s make sure we cannot solve it with an easier and much more cheaper solution. So, considering option four, we would have to essentially align ourselves with the purpose of the project, or in this case prototype.
   
-   The overall purpose is to create a timer in which we can input a delay and allow the timer to countdown which ultimately turns on a relay at the end of the countdown. That being said, we have the first steps of that process covered, which are Starting the timer and triggering the countdown of a specific pre-selected time. so now, all that is missing is turning on the relay, which is currently not working.  so let's go ahead and reframe the problem and isolate the what/where/when/why/details of fixing this in our prototype.
+   The overall purpose is to create a timer in which we can input a delay and allow the timer to countdown which ultimately turns on a relay at the end of the countdown. That being said, we have the first steps of that process covered, which are Starting the timer and triggering the countdown of a specific pre-selected time. so now, all that is missing is turning on the relay, which is currently not working.  so let’s go ahead and reframe the problem and isolate the what/where/when/why/details of fixing this in our prototype.
 
-   1. what:  First, let's discuss the basic necessities. We need some sort of notification to signify that. The countdown of the timer hardware is finished.
+   1. what:  First, let’s discuss the basic necessities. We need some sort of notification to signify that. The countdown of the timer hardware is finished.
    2. how: currently, the notification system is set to use sound (via powered speaker). realistically for my prototype and use case needs, having other notification systems is possible.
    3. when: I intend to use the prototype when I require breaks. Typically these brakes would be used in the middle of the day, or at the after the last Session of work typically requires full attention.
-   4. why: The brakes are solely needed to detach myself from screens and have a chance to relax/meditate as I transition to another session of work or other daily activity. I typically want to stay away from having to use my phone as it's not a great activity to do as my brain would just consider this another stimulating activity.
+   4. why: The brakes are solely needed to detach myself from screens and have a chance to relax/meditate as I transition to another session of work or other daily activity. I typically want to stay away from having to use my phone as it’s not a great activity to do as my brain would just consider this another stimulating activity.
    5. where: I imagine most of the brakes that I take will be in my room or area apart from my office so it most likely will require minimal movement of location.
 
 Taking all of these into consideration, I narrow it down to two different options: #4 and #2.
 So considering that I will use this notification system mainly during breaks, not meant for screen time, perhaps it would be best to Remove a somewhat loud alarm that might jolt me, and subtract from the benefit from the low stress environment. Additionally, the relay itself when it starts does have a small noise in which can be heard if the device is  in proximity. This, in combination with an LED type, notification would be incredibly valuable as I imagine I could wake up from a qquick nap and realize if the break is over or not without  inducing, negative stress.
 
- Next we have option number two, which ultimately still uses the speaker, but doesn't involve utilizing an extra battery which would cost materials, size, and Project clutter (as suggestted in #1). Instead,  we can create a creative solution that splits the USB power source prior to the attachment  into the hardware, which would ultimately split the power source in parallel with one pathway still being the the input of the timer (with microusb male headers) requiring minimum of 50 mA and the other pathway powering the speaker PCB (in Normally Open configuration) only when the relay is turned on. This means after accounting how much current is needed (estimateed from speaker's 12V/15mA specification), the estimated (650mA current required when relay turns on would allow concurrent power to both the timer and speaker.
+ Next we have option number two, which ultimately still uses the speaker, but doesn’t involve utilizing an extra battery which would cost materials, size, and Project clutter (as suggestted in #1). Instead,  we can create a creative solution that splits the USB power source prior to the attachment  into the hardware, which would ultimately split the power source in parallel with one pathway still being the the input of the timer (with microusb male headers) requiring minimum of 50 mA and the other pathway powering the speaker PCB (in Normally Open configuration) only when the relay is turned on. This means after accounting how much current is needed (estimateed from speaker’s 12V/15mA specification), the estimated (650mA current required when relay turns on would allow concurrent power to both the timer and speaker.
   been load to the speaker attached to.
 
- let's first attempt option #4  as this keeps intended speaker in the solution without having to configure additional components which require manual hardwiring which reduces intended modularization of hardwareAs we need to manually hardwire some components and ensure notification system will suffice.
+ let’s first attempt option #4  as this keeps intended speaker in the solution without having to configure additional components which require manual hardwiring which reduces intended modularization of hardwareAs we need to manually hardwire some components and ensure notification system will suffice.
 
-> Ideally, you don't need any soldering to do this project; however, depending on cost, materials, and/or preference, you might want/need to solder or use additional hardware to make sure each seperate electronic in the overall build has the ability to connect to the designated termianal, and that each connection is tightly secure, and there are no loose wires. Last thing you want prior to creating your first prototype is your circuit to start disconnecting pins due to loose and flimsy wires that couldn't have been avoided with better hardware configuration tools. .I'll be thinking the hardware as I explained the guide, but feel free to click here to see the full list.
+> Ideally, you don’t need any soldering to do this project; however, depending on cost, materials, and/or preference, you might want/need to solder or use additional hardware to make sure each seperate electronic in the overall build has the ability to connect to the designated termianal, and that each connection is tightly secure, and there are no loose wires. Last thing you want prior to creating your first prototype is your circuit to start disconnecting pins due to loose and flimsy wires that couldn’t have been avoided with better hardware configuration tools. .I’ll be thinking the hardware as I explained the guide, but feel free to click here to see the full list.
 
- Using ['Type-E Lever Wire Connectors"](https://amzn.to/3NW4eHX) with a Y splitter that splits one input into 2 options such as a [microusb (Micro micro to dual male micro headers) type](https://amzn.to/3NUKOmL) or a [or a USB (1 Male input, 2 USB Female](https://amzn.to/41XZaIH) to allow split on cheap wire instead of splicing the product, you can allow one end for the hardware and another for the speaker as shown below
+ Using [’Type-E Lever Wire Connectors”](https://amzn.to/3NW4eHX) with a Y splitter that splits one input into 2 options such as a [microusb (Micro micro to dual male micro headers) type](https://amzn.to/3NUKOmL) or a [or a USB (1 Male input, 2 USB Female](https://amzn.to/41XZaIH) to allow split on cheap wire instead of splicing the product, you can allow one end for the hardware and another for the speaker as shown below
 
  [image of speaker with usb]
 
-For those that don't want or have much use in the extra components,  you could just as easily manually splice your own wires following the splicing configuration ([seen here](https://amzn.to/3tC23Ct)). Choose one 2 wires you are okay with splicing and configure both methods shown in product: one for connecting the header to the timer and another for connecting pins to the speaker circuit. For joining the nodes, feel free to be creative with the electronic hardware you have as there are many alternatives in connecting 2 junctions to the same node (i.e., breadboard, spade connectors, and/or soldering iron, hot-air gun with covers), please do not feel forced to buy products you will only use once.
+For those that don’t want or have much use in the extra components,  you could just as easily manually splice your own wires following the splicing configuration ([seen here](https://amzn.to/3tC23Ct)). Choose one 2 wires you are okay with splicing and configure both methods shown in product: one for connecting the header to the timer and another for connecting pins to the speaker circuit. For joining the nodes, feel free to be creative with the electronic hardware you have as there are many alternatives in connecting 2 junctions to the same node (i.e., breadboard, spade connectors, and/or soldering iron, hot-air gun with covers), please do not feel forced to buy products you will only use once.
 
 After pulling out the cable or turning power off, you can connect the switch to the timer pcb (momentary push button). I utilized the positive and negative pins (left, bottom two pin connections) enabled by our 5V USB connection (seen below):
 
@@ -263,18 +300,18 @@ Easy, Pain-free triggering and Speaker load Power supply options:
 Connecting Prongs (No Breadboard, No Soldering, but Splicing Suggested)
 
 1. Spade Connectors
-2. ...
+2. …
 
 #### Step 5: Attach external Speaker as Load
 
 Now, we are ready to attach the speaker to the output of the relay. If you only used a usb connection (as shown in my design) to power the timer pcb, the timer pcb unfortunately does not have the ability to power the 2-pin speaker due to a reduced the amount of current flow from using only the 5V usb connection.
 
-- Note: Because I did not want to include an extra power source as I didn't want to make the hardware bulky or add too much wiring which could be ripped or cut, I used a two way splitter which 'hacked' the need for a battery or external power for our load as explained in the hardware documentation. There are many many variations of this, so please don't feel limited in having to purchase this item as well. You can use a 9V battery by itself, or attached to power supply and just feed it to the speaker with the wiring described in the following step.
+- Note: Because I did not want to include an extra power source as I didn’t want to make the hardware bulky or add too much wiring which could be ripped or cut, I used a two way splitter which ‘hacked’ the need for a battery or external power for our load as explained in the hardware documentation. There are many many variations of this, so please don’t feel limited in having to purchase this item as well. You can use a 9V battery by itself, or attached to power supply and just feed it to the speaker with the wiring described in the following step.
 
 - Note: If you are using a 3-pin type of connectors as seen in common relay switches, you can attach power to the NO (Normally Open) pin, and attach the common Ground circuit to the positive terminal of the triggering pin on the PCB
 - Note #2: For those using external power supply, please keep in mind that your connections will be a little different than the directions above but will still utilize the
 
-~~Next, we wi Note(TPDP) I the top input of the 5 of three connections)  After connection are secure and intact, I attached both ground Additionally, splice the  usb cable and utilize a bread board (or painless E-Type connectors) to allow several pins to access the consistent voltage source coming from  To do this, you can can connect a wire to the positive (indicated with '+' on hardware) terminal via screwdriver and connected the other end of the wire to one end of the momentary push button.~~
+~~Next, we wi Note(TPDP) I the top input of the 5 of three connections)  After connection are secure and intact, I attached both ground Additionally, splice the  usb cable and utilize a bread board (or painless E-Type connectors) to allow several pins to access the consistent voltage source coming from  To do this, you can can connect a wire to the positive (indicated with ’+' on hardware) terminal via screwdriver and connected the other end of the wire to one end of the momentary push button.~~
 
 #### Step 6: Test Timer
 
@@ -290,8 +327,8 @@ Since you need a way to place all components in a secure location, and are going
 
   **Resource #1:**
 
-- [Button and Switch Basics](https://learn.sparkfun.com/tutorials/button-and-switch-basics/all) © 2013 by Sparkfun Electronics,  (Contributor "JIMBLOM") is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
-  - Additionally, this guide uses images and text extracted from tutorial above with  contributor "JIMBLOM" ([Sparkfun-profile](https://www.sparkfun.com/users/69916?_ga=2.172188515.1921033785.1704438252-691382123.1704438252)) embedded in this guide.
+- [Button and Switch Basics](https://learn.sparkfun.com/tutorials/button-and-switch-basics/all) © 2013 by Sparkfun Electronics,  (Contributor “JIMBLOM”) is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+  - Additionally, this guide uses images and text extracted from tutorial above with  contributor “JIMBLOM” ([Sparkfun-profile](https://www.sparkfun.com/users/69916?_ga=2.172188515.1921033785.1704438252-691382123.1704438252)) embedded in this guide.
 
 ### License Information
 
@@ -299,9 +336,9 @@ Since you need a way to place all components in a secure location, and are going
 
 This product is _**open source**_!
 
-Please use, reuse, and modify these files as you see fit. Please maintain attribution to "Robjects" and release any derivative under the same license.
+Please use, reuse, and modify these files as you see fit. Please maintain attribution to “Robjects” and release any derivative under the same license.
 
-##### License
+#### License
 
 This work is licensed under a
 [Creative Commons Attribution-ShareAlike 4.0][cc-by-sa].
